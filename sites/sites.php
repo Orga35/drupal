@@ -53,7 +53,14 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/documentation/install/multi-site
  */
-$sites = array(
+/*$sites = array(
   'acreat'      => 'acreat.local',
   'acreat_copy' => 'acreat-copy.local',
+);*/
+
+$sites = array(
+  'acreat.com'      =>   'acreat.com',
+  'copy.com'        =>   'copy.com',
+  'testdrush.com'   =>   'testdrush.com',
+  'testdrush2.com'  =>   'testdrush2.com'
 );
