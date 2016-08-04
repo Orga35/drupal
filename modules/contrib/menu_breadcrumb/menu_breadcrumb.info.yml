@@ -1,0 +1,12 @@
+name: Menu breadcrumb
+type: module
+description: 'Allows you to use the menu the current page belongs to for the breadcrumb.'
+# version: VERSION
+# core: 8.x
+configure: menu_breadcrumb.settings
+
+# Information added by Drupal.org packaging script on 2016-06-10
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'menu_breadcrumb'
+datestamp: 1465565795

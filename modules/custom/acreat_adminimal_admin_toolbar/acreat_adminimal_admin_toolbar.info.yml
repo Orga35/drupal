@@ -1,0 +1,8 @@
+name: Acreat Adminimal Admin Toolbar
+core: 8.x
+description: Customization of the Adminimal styling brought to admin toolbar by Acreat.
+package: Acreat
+type: module
+dependencies:
+  - admin_toolbar
+  - adminimal_admin_toolbar

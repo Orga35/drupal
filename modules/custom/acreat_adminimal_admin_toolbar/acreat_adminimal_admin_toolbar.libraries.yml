@@ -1,0 +1,5 @@
+acreat-adminimal-admin-toolbar:
+  version: VERSION
+  css:
+    theme:
+      css/acreat_adminimal_admin_toolbar.css: {}

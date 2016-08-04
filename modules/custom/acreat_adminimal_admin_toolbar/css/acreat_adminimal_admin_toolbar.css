@@ -1,0 +1,11 @@
+.adminimal-admin-toolbar .toolbar .toolbar-icon:before {
+  background-size: auto;
+}
+
+.adminimal-admin-toolbar .toolbar-icon-admin-toolbar-tools-help:before {
+  transition: none !important;
+}
+
+.adminimal-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded:hover:after {
+  transform: translate(0px, -8px) rotate(90deg) !important;
+}

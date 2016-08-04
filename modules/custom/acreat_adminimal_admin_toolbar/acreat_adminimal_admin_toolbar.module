@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Functions to support adminimal admin toolbar.
+ */
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function acreat_adminimal_admin_toolbar_page_attachments_alter(array &$page) {
+  // Attaches css assets globally.
+  if (_adminimal_admin_toolbar_is_access()) {
+    $page['#attached']['library'][] = 'acreat_adminimal_admin_toolbar/acreat-adminimal-admin-toolbar';
+  }
+}
