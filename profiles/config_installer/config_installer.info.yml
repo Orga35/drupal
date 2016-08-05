@@ -4,7 +4,8 @@ description: 'Use configuration from another Drupal site to install a Drupal ins
 
 # Required modules
 dependencies:
-  - default_content
+  - locale
+  - acreat_default_content
 
 # Information added by Drupal.org packaging script on 2016-05-05
 version: '8.x-1.3'

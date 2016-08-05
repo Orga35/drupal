@@ -4,6 +4,10 @@
  * Install, update and uninstall functions for the minimal installation profile.
  */
 
+/* Site install command */
+// drush site-install config_installer --account-mail="lintanff@acreat.com" --account-name="admin" --account-pass="admin" --db-su="root" --db-su-pw="root" --db-url="mysql://root:root@127.0.0.1/testdrush.com" --site-mail="lintanff@acreat.com" --site-name="Acreat DrushTest" config_installer_sync_configure_form.sync_directory="sites/testdrush.com/sync" --sites-subdir="testdrush.com"
+
+
 /**
  * Implements hook_install().
  *
@@ -12,43 +16,5 @@
  * @see system_install()
  */
 function config_installer_install() {
-  // Create a default role for The Jibe developers with all available permissions assigned.
-  $dev_role = new stdClass();
-  $dev_role->name = 'redacteur';
-  $dev_role->weight = 2;
-  user_role_save($dev_role);
-  user_role_grant_permissions($dev_role->rid, array_keys(module_invoke_all('permission')));
-  \Drupal::logger('config_installer')->notice('Le nouveau rôle Rédacteur a été créé avec succès.');
-  
-  // Create accounts for The Jibe team
-  $user_add = \Drupal\user\Entity\User::create();
-  $user_add->setUsername('Rédacteur');
-  $user_add->setEmail('redacteur@acreat.com');
-  $user_add->setPassword('pass');
-  $user_add->enforceIsNew();
-  $user_add->activate();
-  $user_add->roles[] = 'redacteur';
-  $res = $user_add->save();
-  \Drupal::logger('config_installer')->notice('Le nouvel utilisateur Rédacteur a été créé avec succès.');
-  
-  $node = Node::create([
-    'type'      => 'page',
-    'uid'       => 1,
-    'revision'  => 0,
-    'status'    => TRUE,
-    'promote'   => 0,
-    'created'   => time(),
-    'langcode'  => 'fr',
-    'title'     => 'Mentions légales',
-  ]);
-  
-  $node->set('body', [
-    'value' => '<p>Ceci est la page des mentions légales...</p>',
-    'format' => 'basic_html'
-  ]);
-  
-  $node->save();
-  $source = '/node/' . $node->get('nid')->value;
-  \Drupal::service('path.alias_storage')->save($source, '/mentions-legales', 'fr');
-  \Drupal::logger('config_installer')->notice('Le node Mentions légales a été créé avec succès.');
+
 }
