@@ -1,14 +1,7 @@
 name: 'Configuration installer'
 type: profile
 description: 'Use configuration from another Drupal site to install a Drupal instance. Suitable for advanced users.'
-
-# Required modules
-dependencies:
-  - locale
-  - acreat_default_content
-
-# Information added by Drupal.org packaging script on 2016-05-05
-version: '8.x-1.3'
-core: '8.x'
-project: 'config_installer'
-datestamp: 1462466940
+version: VERSION
+core: 8.x
+# Un comment to completely remove profile selection.
+#distribution: TRUE

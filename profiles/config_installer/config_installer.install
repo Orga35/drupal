@@ -4,17 +4,17 @@
  * Install, update and uninstall functions for the minimal installation profile.
  */
 
-/* Site install command */
-// drush site-install config_installer --account-mail="lintanff@acreat.com" --account-name="admin" --account-pass="admin" --db-su="root" --db-su-pw="root" --db-url="mysql://root:root@127.0.0.1/testdrush.com" --site-mail="lintanff@acreat.com" --site-name="Acreat DrushTest" config_installer_sync_configure_form.sync_directory="sites/testdrush.com/sync" --sites-subdir="testdrush.com"
-
-
-/**
- * Implements hook_install().
- *
- * Performs actions to set up the site for this profile.
- *
- * @see system_install()
- */
-function config_installer_install() {
-
-}
+///**
+// * Implements hook_install().
+// *
+// * Performs actions to set up the site for this profile.
+// *
+// * @see system_install()
+// */
+//function minimal_install() {
+//  // Disable the user pictures on nodes.
+//  \Drupal::config('system.theme.global')->set('features.node_user_picture', FALSE)->save();
+//
+//  // Allow visitor account creation, but with administrative approval.
+//  \Drupal::config('user.settings')->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save();
+//}
