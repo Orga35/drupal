@@ -1,0 +1,18 @@
+***************
+*** 124,131 ****
+     * {@inheritdoc}
+     */
+    public function createCollection($collection) {
+-     $this->baseStorage = $this->baseStorage->createCollection($collection);
+-     return $this;
+    }
+  
+    /**
+--- 124,130 ----
+     * {@inheritdoc}
+     */
+    public function createCollection($collection) {
++     return new static($this->baseStorage->createCollection($collection), $this->profiles);
+    }
+  
+    /**

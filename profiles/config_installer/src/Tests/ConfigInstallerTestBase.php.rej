@@ -1,0 +1,22 @@
+***************
+*** 30,41 ****
+     *
+     * @var string
+     */
+-   protected $tarball;
+- 
+-   protected function setUp() {
+-     $this->tarball =  __DIR__ . '/Fixtures/minimal.tar.gz';
+-     parent::setUp();
+-   }
+  
+    /**
+     * Ensures that the user page is available after installation.
+--- 30,36 ----
+     *
+     * @var string
+     */
++   protected $tarball =  __DIR__ . '/Fixtures/minimal.tar.gz';
+  
+    /**
+     * Ensures that the user page is available after installation.

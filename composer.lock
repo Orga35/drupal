@@ -1114,17 +1114,17 @@
         },
         {
             "name": "drupal/features",
-            "version": "3.0.0-beta6",
+            "version": "3.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/features",
-                "reference": "8.x-3.0-beta6"
+                "reference": "8.x-3.0-beta7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.0-beta6.zip",
+                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.0-beta7.zip",
                 "reference": null,
-                "shasum": "722c391b78b7199e1a5aa2b133192990d5e0f11c"
+                "shasum": "88a65bc9e4012f95d41b8527cb290371b7fc1aa2"
             },
             "require": {
                 "drupal/config_update": "*",
@@ -1136,8 +1136,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-beta6",
-                    "datestamp": "1467982823"
+                    "version": "8.x-3.0-beta7",
+                    "datestamp": "1470336647"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
