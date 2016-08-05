@@ -11,13 +11,44 @@
  *
  * @see system_install()
  */
-/*function minimal_install() {
-  use \Drupal\node\Entity\Node;
-  use \Drupal\file\Entity\File;
+function config_installer_install() {
+  // Create a default role for The Jibe developers with all available permissions assigned.
+  $dev_role = new stdClass();
+  $dev_role->name = 'redacteur';
+  $dev_role->weight = 2;
+  user_role_save($dev_role);
+  user_role_grant_permissions($dev_role->rid, array_keys(module_invoke_all('permission')));
+  \Drupal::logger('config_installer')->notice('Le nouveau rôle Rédacteur a été créé avec succès.');
   
-  // Disable the user pictures on nodes.
-  //\Drupal::config('system.theme.global')->set('features.node_user_picture', FALSE)->save();
-
-  // Allow visitor account creation, but with administrative approval.
-  //\Drupal::config('user.settings')->set('register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)->save();
-}*/
+  // Create accounts for The Jibe team
+  $user_add = \Drupal\user\Entity\User::create();
+  $user_add->setUsername('Rédacteur');
+  $user_add->setEmail('redacteur@acreat.com');
+  $user_add->setPassword('pass');
+  $user_add->enforceIsNew();
+  $user_add->activate();
+  $user_add->roles[] = 'redacteur';
+  $res = $user_add->save();
+  \Drupal::logger('config_installer')->notice('Le nouvel utilisateur Rédacteur a été créé avec succès.');
+  
+  $node = Node::create([
+    'type'      => 'page',
+    'uid'       => 1,
+    'revision'  => 0,
+    'status'    => TRUE,
+    'promote'   => 0,
+    'created'   => time(),
+    'langcode'  => 'fr',
+    'title'     => 'Mentions légales',
+  ]);
+  
+  $node->set('body', [
+    'value' => '<p>Ceci est la page des mentions légales...</p>',
+    'format' => 'basic_html'
+  ]);
+  
+  $node->save();
+  $source = '/node/' . $node->get('nid')->value;
+  \Drupal::service('path.alias_storage')->save($source, '/mentions-legales', 'fr');
+  \Drupal::logger('config_installer')->notice('Le node Mentions légales a été créé avec succès.');
+}

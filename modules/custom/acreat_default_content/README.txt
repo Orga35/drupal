@@ -1,0 +1,1 @@
+This module is inspired by “Default Content” and automatically creates content declared in sync directory.
