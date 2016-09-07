@@ -1,0 +1,9 @@
+acreat_default_content.import:
+  path: '/admin/content/acreat-default-content/import'
+  defaults:
+    _controller: '\Drupal\acreat_default_content\Controller\AcreatDefaultContentController::import'
+    _title: 'Import'
+    report_type: NULL
+    name: NULL
+  requirements:
+    _permission: 'access content'

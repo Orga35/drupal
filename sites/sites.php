@@ -60,7 +60,6 @@
 
 $sites = array(
   'acreat.com'      =>   'acreat.com',
-  'copy.com'        =>   'copy.com',
   'testdrush.com'   =>   'testdrush.com',
-  'testdrush2.com'  =>   'testdrush2.com'
+  'acreatcopy.com'  =>   'acreatcopy.com',
 );

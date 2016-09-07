@@ -1,4 +1,5 @@
-.adminimal-admin-toolbar .toolbar .toolbar-icon:before {
+.adminimal-admin-toolbar .toolbar .toolbar-icon:before,
+.adminimal-admin-toolbar .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon:before{
   background-size: auto;
 }
 

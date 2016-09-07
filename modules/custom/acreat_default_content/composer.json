@@ -1,8 +1,0 @@
-{
-  "name": "drupal/acreat_default_content",
-  "description": “Automatically creates declared content in synchronised directory.”,
-  "type": "drupal-module",
-  "authors": [{
-    "name": "Franck LINTANFF",
-  }]
-}

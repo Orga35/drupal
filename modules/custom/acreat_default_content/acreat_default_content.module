@@ -6,14 +6,16 @@
  */
 
 
-Use \Drupa  l\node\Entity\Node;
+Use \Drupal\node\Entity\Node;
 
 
 /**
  * Implements hook_modules_installed().
  */
-function acreat_default_content_modules_installed($modules) {
-  if (!\Drupal::isConfigSyncing()) {
+function acreat_default_content_modules_installed($modules)
+{
+    // Programmatically creates a node
+    /*if (!\Drupal::isConfigSyncing()) {
     $node = Node::create([
       'type'      => 'page',
       'uid'       => 1,
@@ -31,5 +33,5 @@ function acreat_default_content_modules_installed($modules) {
     ]);
   
     $node->save();
-  }
+  }*/
 }
