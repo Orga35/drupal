@@ -1,16 +1,7 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\features\FeaturesManagerInterface.
- */
-
 namespace Drupal\features;
 
-use Drupal\Component\Serialization\Yaml;
-use Drupal\features\FeaturesAssignerInterface;
-use Drupal\features\FeaturesBundleInterface;
-use Drupal\features\FeaturesGeneratorInterface;
 use Drupal\Core\Extension\Extension;
 
 /**

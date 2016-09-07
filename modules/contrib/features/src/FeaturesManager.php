@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\features\FeaturesManager.
- */
-
 namespace Drupal\features;
 use Drupal;
 use Drupal\Component\Serialization\Yaml;
@@ -109,6 +104,13 @@ class FeaturesManager implements FeaturesManagerInterface {
    * @var \Drupal\features\FeaturesAssigner
    */
   protected $assigner;
+
+  /**
+   * Cache module.features.yml data keyed by module name.
+   *
+   * @var array
+   */
+  protected $featureInfoCache;
 
   /**
    * Constructs a FeaturesManager object.
@@ -491,7 +493,9 @@ class FeaturesManager implements FeaturesManagerInterface {
     $info = $this->getExtensionInfo($extension);
     $features_info = $this->getFeaturesInfo($extension);
     $bundle = $this->getAssigner()->findBundle($info, $features_info);
-    $short_name = $bundle->getShortName($extension->getName());
+    // Use the full extension name as the short_name.  Important to allow
+    // multiple modules with different namespaces such as oa_media, test_media.
+    $short_name = $extension->getName();
     return $this->initPackage($short_name, $info['name'], !empty($info['description']) ? $info['description'] : '', $info['type'], $bundle, $extension);
   }
 
@@ -812,7 +816,6 @@ class FeaturesManager implements FeaturesManagerInterface {
       'status' => FeaturesManagerInterface::STATUS_DEFAULT,
       'version' => '',
       'state' => FeaturesManagerInterface::STATE_DEFAULT,
-      'directory' => $machine_name,
       'files' => [],
       'bundle' => $bundle->isDefault() ? '' : $bundle->getMachineName(),
       'extension' => NULL,
@@ -928,8 +931,6 @@ class FeaturesManager implements FeaturesManagerInterface {
    */
   protected function addPackageFiles(Package $package) {
     $config_collection = $this->getConfigCollection();
-    // Ensure the directory reflects the current full machine name.
-    $package->setDirectory($package->getMachineName());
     // Only add files if there is at least one piece of configuration
     // present.
     if ($package->getConfig()) {
@@ -951,7 +952,9 @@ class FeaturesManager implements FeaturesManagerInterface {
         // avoid extraneous additions, reset permissions.
         if ($config->getType() == 'user_role') {
           $data = $config->getData();
-          $data['permissions'] = [];
+          // Unset and not empty permissions data to prevent loss of configured
+          // role permissions in the event of a feature revert.
+          unset($data['permissions']);
           $config->setData($data);
         }
         $package->appendFile([
@@ -1072,13 +1075,40 @@ class FeaturesManager implements FeaturesManagerInterface {
   }
 
   /**
+   * Creates a high performant version of the ConfigDependencyManager.
+   *
+   * @return \Drupal\features\FeaturesConfigDependencyManager
+   *   A high performant version of the ConfigDependencyManager.
+   *
+   * @see \Drupal\Core\Config\Entity\ConfigDependencyManager
+   */
+  protected function getFeaturesConfigDependencyManager() {
+    $dependency_manager = new FeaturesConfigDependencyManager();
+    // Read all configuration using the factory. This ensures that multiple
+    // deletes during the same request benefit from the static cache. Using the
+    // factory also ensures configuration entity dependency discovery has no
+    // dependencies on the config entity classes. Assume data with UUID is a
+    // config entity. Only configuration entities can be depended on so we can
+    // ignore everything else.
+    $data = array_map(function(Drupal\Core\Config\ImmutableConfig $config) {
+      $data = $config->get();
+      if (isset($data['uuid'])) {
+        return $data;
+      }
+      return FALSE;
+    }, $this->configFactory->loadMultiple($this->configStorage->listAll()));
+    $dependency_manager->setData(array_filter($data));
+    return $dependency_manager;
+  }
+
+  /**
    * Loads configuration from storage into a property.
    */
   protected function initConfigCollection($reset = FALSE) {
     if ($reset || empty($this->configCollection)) {
       $config_collection = [];
       $config_types = $this->listConfigTypes();
-      $dependency_manager = $this->configManager->getConfigDependencyManager();
+      $dependency_manager = $this->getFeaturesConfigDependencyManager();
       // List configuration provided by installed features.
       $existing_config = $this->listExistingConfig(NULL);
       foreach (array_keys($config_types) as $config_type) {
@@ -1134,6 +1164,12 @@ class FeaturesManager implements FeaturesManagerInterface {
       if (!empty($export_settings['folder'])) {
         $path .= '/' . $export_settings['folder'];
       }
+    }
+
+    // Use the same path of a package to override it.
+    if ($extension = $package->getExtension()) {
+      $extension_path = $extension->getPath();
+      $path = dirname($extension_path);
     }
 
     return array($full_name, $path);
@@ -1227,13 +1263,13 @@ class FeaturesManager implements FeaturesManagerInterface {
   public function statusLabel($status) {
     switch ($status) {
       case FeaturesManagerInterface::STATUS_NO_EXPORT:
-        return t('Not exported');
+        return $this->t('Not exported');
 
       case FeaturesManagerInterface::STATUS_UNINSTALLED:
-        return t('Uninstalled');
+        return $this->t('Uninstalled');
 
       case FeaturesManagerInterface::STATUS_INSTALLED:
-        return t('Installed');
+        return $this->t('Installed');
     }
   }
 
@@ -1243,10 +1279,10 @@ class FeaturesManager implements FeaturesManagerInterface {
   public function stateLabel($state) {
     switch ($state) {
       case FeaturesManagerInterface::STATE_DEFAULT:
-        return t('Default');
+        return $this->t('Default');
 
       case FeaturesManagerInterface::STATE_OVERRIDDEN:
-        return t('Changed');
+        return $this->t('Changed');
     }
   }
 
@@ -1254,11 +1290,16 @@ class FeaturesManager implements FeaturesManagerInterface {
    * {@inheritdoc}
    */
   public function getFeaturesInfo(Extension $extension) {
+    $module_name = $extension->getName();
+    if (isset($this->featureInfoCache[$module_name])) {
+      return $this->featureInfoCache[$module_name];
+    }
     $features_info = NULL;
-    $filename = $this->root . '/' . $extension->getPath() . '/' . $extension->getName() . '.features.yml';
+    $filename = $this->root . '/' . $extension->getPath() . '/' . $module_name . '.features.yml';
     if (file_exists($filename)) {
       $features_info = Yaml::decode(file_get_contents($filename));
     }
+    $this->featureInfoCache[$module_name] = $features_info;
     return $features_info;
   }
 
