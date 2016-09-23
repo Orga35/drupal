@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Functions to support adminimal admin toolbar.
+ */
+
+/**
+ * Debug function
+ */
+function print_pre($var, $die = true) {
+  print '<pre>';
+  print_r($var);
+  print '</pre>';
+  
+  if($die)
+    die;
+}

@@ -1,0 +1,5 @@
+name: Acreat Helper
+core: 8.x
+description: Help functions by Acreat.
+package: Acreat
+type: module

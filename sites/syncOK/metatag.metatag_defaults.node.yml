@@ -1,0 +1,25 @@
+uuid: 5e3ca6cb-0b5a-4e3a-9317-7d511caafa20
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ydpmSCtxLjO9xqkBxObkeYx0Bf2dkW-d8bB_6Q1Ggjs
+id: node
+label: Content
+tags:
+  canonical_url: '[current-page:url:absolute]'
+  content_language: fr
+  description: '[node:summary]'
+  referrer: no-referrer
+  shortlink: '[current-page:url:unaliased]'
+  title: '[node:title] | [site:name]'
+  google_plus_description: '[node:summary]'
+  google_plus_name: '[current-page:title]'
+  og_description: '[node:summary]'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  og_url: '[current-page:url:absolute]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_page_url: '[current-page:url:absolute]'
+  twitter_cards_title: '[node:title]'
+  twitter_cards_type: summary

@@ -6,4 +6,4 @@ acreat_default_content.import:
     report_type: NULL
     name: NULL
   requirements:
-    _permission: 'access content'
+    _permission: 'administer content'

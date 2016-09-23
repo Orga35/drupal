@@ -1,0 +1,24 @@
+uuid: f09ac0bd-c30b-442f-971e-d12d3e7d532d
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yBqw6UD3j0MM1yoDSVDif7nw4SNdoS2e385nw--3ysk
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  content_language: fr
+  description: '[site:slogan]'
+  referrer: no-referrer
+  shortlink: '[site:url]'
+  title: '[site:name]'
+  google_plus_description: '[site:slogan]'
+  google_plus_name: '[site:name]'
+  og_description: '[site:slogan]'
+  og_site_name: '[site:name]'
+  og_url: '[site:url]'
+  twitter_cards_description: '[site:url]'
+  twitter_cards_page_url: '[site:url]'
+  twitter_cards_title: '[site:name]'
+  twitter_cards_type: summary

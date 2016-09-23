@@ -1,0 +1,27 @@
+uuid: 7d861d1e-332e-4e7b-af92-de9d061ea3f3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fichier
+    - node.type.page
+  module:
+    - file
+id: node.page.field_fichier
+field_name: field_fichier
+entity_type: node
+bundle: page
+label: 'Fichiers joints'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'page/fichier/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx pdf'
+  max_filesize: '5 Mb'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

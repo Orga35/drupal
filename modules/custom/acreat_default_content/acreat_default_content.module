@@ -2,36 +2,5 @@
 
 /**
  * @file
- * Installs default content on the behalf of modules at time of install.
+ * Installs default content stored in the Sync directory
  */
-
-
-Use \Drupal\node\Entity\Node;
-
-
-/**
- * Implements hook_modules_installed().
- */
-function acreat_default_content_modules_installed($modules)
-{
-    // Programmatically creates a node
-    /*if (!\Drupal::isConfigSyncing()) {
-    $node = Node::create([
-      'type'      => 'page',
-      'uid'       => 1,
-      'revision'  => 0,
-      'status'    => TRUE,
-      'promote'   => 0,
-      'created'   => time(),
-      'langcode'  => 'fr',
-      'title'     => 'Mentions légales',
-    ]);
-  
-    $node->set('body', [
-      'value' => '<p>Ceci est la page des mentions légales...</p>',
-      'format' => 'basic_html'
-    ]);
-  
-    $node->save();
-  }*/
-}
