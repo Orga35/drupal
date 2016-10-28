@@ -11,9 +11,11 @@ use Drupal\node\Entity\Node;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\acreat_helper\Controller\AcreatHelperController;
+use Drupal\user\Entity\User;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Yaml\Dumper;
+
 
 
 /**
@@ -59,23 +61,13 @@ class AcreatFactoryContentController extends ControllerBase
       "#prefix" => '<h3>Contenus créés</h3>',
       "#weight" => 0
     );
-    $build['nodes_fail'] = array(
-      "#markup" => (count($createdNodes['fail']) > 0) ? implode("<br />", $createdNodes['fail']) : 'Aucun',
-      "#prefix" => '<h3>Contenus non créés</h3>',
-      "#weight" => 1
-    );
     
     // Import blocks
     $createdBlocks = $this->importBlocks();
     $build['blocks_success'] = array(
       "#markup" => (count($createdBlocks['success']) > 0) ? implode("<br />", $createdBlocks['success']) : 'Aucun',
       "#prefix" => '<h3>Blocs créés</h3>',
-      "#weight" => 2
-    );
-    $build['blocks_fail'] = array(
-      "#markup" => (count($createdBlocks['fail']) > 0) ? implode("<br />", $createdBlocks['fail']) : 'Aucun',
-      "#prefix" => '<h3>Blocs non créés</h3>',
-      "#weight" => 3
+      "#weight" => 1
     );
     
     // Import links
@@ -85,9 +77,12 @@ class AcreatFactoryContentController extends ControllerBase
       "#prefix" => '<h3>Liens de menu créés</h3>',
       "#weight" => 2
     );
-    $build['links_fail'] = array(
-      "#markup" => (count($createdLinks['fail']) > 0) ? implode("<br />", $createdLinks['fail']) : 'Aucun',
-      "#prefix" => '<h3>Liens non créés</h3>',
+    
+    // Import users
+    $createdUsers = $this->importUsers();
+    $build['users_success'] = array(
+      "#markup" => (count($createdUsers['success']) > 0) ? implode("<br />", $createdUsers['success']) : 'Aucun',
+      "#prefix" => '<h3>Utilisateurs créés</h3>',
       "#weight" => 3
     );
 
@@ -362,6 +357,50 @@ class AcreatFactoryContentController extends ControllerBase
       } else {
         $created['fail'][] = "An error occured creating block " . $linkDefinition['title'] . " from " . basename($linkFile) . " file parsing.";
         \Drupal::logger('acreat_factory_content')->notice("An error occured creating block @link_title from @link_file file parsing.", array('@link_title' => $linkDefinition['title'], '@link_file' => basename($linkFile)));
+      }
+    }
+    
+    return $created;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function importUsers()
+  {
+    // Get the content files
+    $userFiles = new Finder();
+    $userFiles->name('user.*.yml')->in($this->syncDirectory);
+    
+    $created = array('success' => array(), 'fail' => array());
+    foreach($userFiles as $userFile) {
+      // Parse the content file
+      $fileContent = file_get_contents($userFile);
+      $userDefinition = $this->parser->parse($fileContent);
+      
+      // User creation
+      $user = User::create();
+      $user->enforceIsNew();
+      $user->setEmail($userDefinition['email']);
+      $user->setUsername($userDefinition['user_name']);
+      $user->setPassword($userDefinition['password']);
+      $user->set('init', $userDefinition['email']);
+      $user->set('langcode', 'fr');
+      $user->set('preferred_langcode', 'fr');
+      $user->set('preferred_admin_langcode', 'fr');
+      $user->activate();
+      
+      $roles = explode(';', $userDefinition['roles']);
+      foreach($roles as $rid) {
+        $user->addRole($rid);
+      }
+      
+      if($user->save()) {
+        $created['success'][] = "User " . $userDefinition['user_name'] . " automatically created from " . basename($userFile) . " file parsing.";
+        \Drupal::logger('acreat_factory_content')->notice("User @user_name automatically created from @user_file file parsing.", array('@user_name' => $userDefinition['user_name'], '@user_file' => basename($userFile)));
+      } else {
+        $created['fail'][] = "An error occured creating block " . $userDefinition['user_name'] . " from " . basename($userFile) . " file parsing.";
+        \Drupal::logger('acreat_factory_content')->notice("An error occured creating block @user_name from @user_file file parsing.", array('@user_name' => $userDefinition['user_name'], '@user_file' => basename($userFile)));
       }
     }
     
