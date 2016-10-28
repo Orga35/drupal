@@ -6,7 +6,7 @@
 
 // Core variables and mixins
 @import "variables";
-@import "../../bootstrap/stylesheets/bootstrap/mixins";
+@import "mixins";
 
 // Reset and dependencies
 @import "../../bootstrap/stylesheets/bootstrap/normalize";
@@ -15,28 +15,28 @@
 
 // Core CSS
 @import "../../bootstrap/stylesheets/bootstrap/scaffolding";
-@import "../../bootstrap/stylesheets/bootstrap/type";
+@import "type";
 @import "../../bootstrap/stylesheets/bootstrap/code";
 @import "../../bootstrap/stylesheets/bootstrap/grid";
 @import "../../bootstrap/stylesheets/bootstrap/tables";
-@import "../../bootstrap/stylesheets/bootstrap/forms";
-@import "../../bootstrap/stylesheets/bootstrap/buttons";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
 
 // Components
 @import "../../bootstrap/stylesheets/bootstrap/component-animations";
-@import "../../bootstrap/stylesheets/bootstrap/dropdowns";
+@import "dropdowns";
 @import "../../bootstrap/stylesheets/bootstrap/button-groups";
 @import "../../bootstrap/stylesheets/bootstrap/input-groups";
 @import "../../bootstrap/stylesheets/bootstrap/navs";
-@import "../../bootstrap/stylesheets/bootstrap/navbar";
-@import "../../bootstrap/stylesheets/bootstrap/breadcrumbs";
+@import "bootstrap/navbar";
+@import "breadcrumbs";
 @import "../../bootstrap/stylesheets/bootstrap/pagination";
 @import "../../bootstrap/stylesheets/bootstrap/pager";
 @import "../../bootstrap/stylesheets/bootstrap/labels";
 @import "../../bootstrap/stylesheets/bootstrap/badges";
 @import "../../bootstrap/stylesheets/bootstrap/jumbotron";
 @import "../../bootstrap/stylesheets/bootstrap/thumbnails";
-@import "../../bootstrap/stylesheets/bootstrap/alerts";
+@import "bootstrap/alerts";
 @import "../../bootstrap/stylesheets/bootstrap/progress-bars";
 @import "../../bootstrap/stylesheets/bootstrap/media";
 @import "../../bootstrap/stylesheets/bootstrap/list-group";
@@ -54,3 +54,196 @@
 // Utility classes
 @import "../../bootstrap/stylesheets/bootstrap/utilities";
 @import "../../bootstrap/stylesheets/bootstrap/responsive-utilities";
+
+// Social colors
+@import "social-colors";
+
+// Font Awesome
+@import "font-awesome/style";
+
+// Module : Acreat paragraphs
+@import "paragraphs";
+
+// Module : Actualité Pager Block
+@import "actualite-pager-block";
+
+// Module : Client Coordonnées Block
+@import "client-coordonnees-block";
+
+// Module : Client Coordonnées Block
+@import "client-coordonnees-map-block";
+
+// Module : Client Follow Us Block
+@import "client-followus-block";
+
+// Module : Client Copyright Block
+@import "client-copyright-block";
+
+// Module : Footer Menu Block
+@import "block-menu-footer";
+
+// YAML Newsletter Form
+@import "block-newsletter-form";
+
+// YAML Contact Form
+@import "yaml-contact-form";
+
+// Actualité
+@import "actualite";
+@import "acreat-actualite-pager-block";
+
+// Librairie : JQuery UI Multiselect Widget
+@import "jquery-multiselect";
+
+// Librairie : JQuery Slick slider
+@import "jquery-slick";
+
+// Regions
+@import "region-header";
+@import "region-banner";
+@import "region-content-top";
+@import "region-footer";
+
+// User relative styles
+@import "user";
+
+
+
+//
+// Global styles
+// --------------------------------------------------
+
+// Top fixed main navbar fix
+body {
+  padding-top: $nav-main-height;
+}
+
+a,
+.btn_smooth {
+  @include transition(all ease-in-out .2s);
+}
+
+.region {
+  background: #fff;
+}
+
+.region.content-3 {
+  padding-top: ($content-top-arrow-width * 2.5);
+  padding-bottom: ($content-top-arrow-width * 2.5);
+}
+
+.region.content-5 {
+  padding-bottom: ($content-top-arrow-width * 2.5);
+}
+
+
+// Accueil
+body.path-frontpage {
+  // Contenu de la page d'accueil
+  .page {
+    img {
+      width: 100%;
+    }
+    
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      color: $brand-primary;
+      margin-bottom: 0.7em;
+    }
+    
+    p {
+      text-align: center;
+    }
+   
+    a.btn {
+      display: block;
+      margin: 2em auto 0;
+      max-width: 100%;
+      width: 200px;
+    }
+    
+    .paragraph {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .paragraph.paragraph--type--multicol-image-text-stacked {
+      .field--name-field-text-image {
+        > .field--item {
+          @include make-xs-column(12);
+          @include make-sm-column(12);
+          @include make-md-column(4);
+          @include make-lg-column(4);
+        }
+      }
+    }
+  }
+}
+
+
+// 403, 404, Maintenance
+body.no-content,
+body.maintenance-page {
+  padding-top: 0;
+  
+  .content-3 {
+    background: lighten($panel-default-border, 10%);
+    min-height: 100vh;
+    
+    h1 {
+      font-size: 8em;
+      font-weight: 900;
+      
+      span {
+        font-size: 0.3em;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+body.maintenance-page {
+  .content-3 {
+    text-align: center;
+    
+    .logo {
+      display: block;
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+
+@media (max-width: $screen-sm-max) {
+  body.path-frontpage {
+    .page {
+      .paragraph--type--two-columns-image-text {
+        margin-bottom: 2em;
+      }
+      
+      .field--name-field-text-image {
+        > .field--item:last-child {
+          .paragraph--type--two-columns-image-text {
+            margin-bottom: 0;
+            
+            .paragraph {
+              margin-bottom: 0;
+            }
+          } 
+        }
+      }
+   
+      a.btn {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  body {
+    padding-top: ($nav-main-height / 1.5);
+  }
+}

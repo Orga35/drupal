@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default template of the client_information_coordonnees theme from the Acreat Factory module
+ *
+ * Available variables:
+ * - $client
+ */
+#}
+
+<p><strong>Suivez-nous :</strong></p>
+<p>
+  {% if client.facebook_url.default_value is not empty %}
+    <a href="{{ client.facebook_url.default_value }}" target="_blank" title="Retrouvez {{ client.denomination_sociale.default_value }} sur Facebook"><i class="btn btn-default btn-circle fa fa-facebook btn_smooth"></i></a>
+  {% endif %}
+  
+  
+  {% if client.twitter_url.default_value is not empty %}
+    <a href="{{ client.twitter_url.default_value }}" target="_blank" title="Suivez {{ client.denomination_sociale.default_value }} sur Twitter"><i class="btn btn-default btn-circle fa fa-twitter btn_smooth"></i></a>
+  {% endif %}
+  
+  
+  {% if client.google_plus_url.default_value is not empty %}
+    <a href="{{ client.google_plus_url.default_value }}" target="_blank" title="Retrouvez {{ client.denomination_sociale.default_value }} sur Google Plus"><i class="btn btn-default btn-circle fa fa-google-plus btn_smooth"></i></a>
+  {% endif %}
+</p>

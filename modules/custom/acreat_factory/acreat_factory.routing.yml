@@ -1,0 +1,15 @@
+acreat_factory.admin:
+  path: '/admin/config/acreat-factory'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Acreat Factory'
+  requirements:
+    _permission: 'access administration pages'
+
+acreat_factory.client_config_form:
+  path: '/admin/config/acreat-factory/client-information'
+  defaults:
+    _form: '\Drupal\acreat_factory\Form\ClientConfigForm'
+    _title: 'Configuration des informations relatives au client'
+  requirements:
+    _permission: 'administer site configuration'

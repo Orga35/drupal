@@ -1,0 +1,12 @@
+//
+// Buttons
+// --------------------------------------------------
+@import "../../../bootstrap/stylesheets/bootstrap/buttons";
+
+.btn {
+  @include border-top-radius(0);
+  @include border-right-radius(0);
+  @include border-bottom-radius(0);
+  @include border-left-radius(0);
+  @include transition(all ease-in-out .2s);
+}

@@ -1,0 +1,101 @@
+uuid: b3709f5c-dcf3-44f8-80e2-0160c54d6e8e
+langcode: fr
+status: true
+dependencies: {  }
+uid: 1
+template: false
+id: contact
+title: Contact
+description: 'Formulaire de contact.'
+elements: "title_informations:\n  '#type': markup\n  '#markup': '<h2>Vos coordonnées</h2>'\ncivilite:\n  '#type': select\n  '#title': Civilité\n  '#title_display': invisible\n  '#options':\n    Monsieur: Monsieur\n    Madame: Madame\n    Mademoiselle: Mademoiselle\n  '#empty_option': 'Civilité *'\n  '#required': true\n  '#format': value\nprenom:\n  '#type': textfield\n  '#title': Prénom\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Prénom *'\n  '#required': true\nnom:\n  '#type': textfield\n  '#title': Nom\n  '#title_display': invisible\n  '#placeholder': 'Nom *'\n  '#required': true\nadresse:\n  '#type': textarea\n  '#title': Adresse\n  '#title_display': invisible\n  '#rows': '3'\n  '#placeholder': Adresse\ncode_postal:\n  '#type': textfield\n  '#title': 'Code postal'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Code postal'\nville:\n  '#type': textfield\n  '#title': Ville\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': Ville\ntelephone:\n  '#type': textfield\n  '#title': 'Numéro de téléphone'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Numéro de téléphone *'\n  '#required': true\nmail:\n  '#type': email\n  '#title': 'Adresse e-mail'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Adresse e-mail *'\n  '#required': true\n  '#format': value\nsociete:\n  '#type': textfield\n  '#title': Société\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': Société\ntitle_message:\n  '#type': markup\n  '#markup': '<h2>Votre message</h2>'\nobjet:\n  '#type': textfield\n  '#title': Objet\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Objet *'\n  '#required': true\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#title_display': invisible\n  '#description_display': invisible\n  '#rows': '4'\n  '#placeholder': 'Message *'\n  '#required': true\n"
+settings:
+  page: false
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: Envoyer
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: true
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: false
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: message
+  confirmation_message: '<p>Votre demande de contact nous est parvenue avec succ&egrave;s. Nous vous recontacterons dans les plus brefs d&eacute;lais.</p>'
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles:
+      - redacteur
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  submission_notification:
+    id: email
+    label: 'Notification de soumission aux administrateurs'
+    handler_id: submission_notification
+    status: true
+    weight: 0
+    settings:
+      to_mail: default
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: default
+      from_name: default
+      subject: default
+      body: default
+      excluded_elements:
+        title_informations: title_informations
+        title_message: title_message
+      html: true
+      attachments: false
+      debug: false

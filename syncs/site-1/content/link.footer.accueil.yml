@@ -1,0 +1,5 @@
+title: Accueil
+path: internal:/
+menu: footer
+weight: -99
+expanded: false

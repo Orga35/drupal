@@ -1,0 +1,70 @@
+//
+// YAML Contact Form styles
+// --------------------------------------------------
+
+.block-contact-form {
+  @include make-xs-column(12);
+  @include make-xs-column-pull(0);
+  @include make-sm-column(6);
+  @include make-sm-column-pull(6);
+  @include make-md-column(6);
+  @include make-md-column-pull(6);
+  @include make-lg-column(6);
+  @include make-lg-column-pull(6);
+  
+  FORM {
+    @include make-row();
+  
+    * {
+      box-shadow: none !important;
+    }
+    
+    .form-group {
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+    
+    .form-type-textarea {
+      margin-bottom: $form-group-margin-bottom;
+    }
+    
+    .form-item-civilite,
+    .form-item-prenom,
+    .form-item-nom,
+    .form-item-telephone,
+    .form-item-mail,
+    .form-item-societe {
+      @include make-xs-column(12);
+      @include make-sm-column(4);
+      @include make-md-column(4);
+      @include make-lg-column(4);
+    }
+    
+    h2,
+    .form-item-adresse,
+    .form-item-objet,
+    .form-item-message,
+    .form-actions {
+      @include make-xs-column(12);
+      @include make-sm-column(12);
+      @include make-md-column(12);
+      @include make-lg-column(12);
+    }
+    
+    .form-item-code-postal,
+    .form-item-ville {
+      @include make-xs-column(12);
+      @include make-sm-column(6);
+      @include make-md-column(6);
+      @include make-lg-column(6);
+    }
+    
+    .form-submit {
+      @extend .btn;
+      @extend .btn-lg;
+      @extend .btn-primary;
+      margin-left: 15px;
+    }
+  }
+}

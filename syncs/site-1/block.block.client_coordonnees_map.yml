@@ -1,0 +1,26 @@
+uuid: 555e9b28-9ff8-486d-9afb-df425fa233bd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - acreat_factory
+    - system
+  theme:
+    - acreat
+id: client_coordonnees_map
+theme: acreat
+region: content_3
+weight: -6
+provider: null
+plugin: client_coordonnees_map_block
+settings:
+  id: client_coordonnees_map_block
+  label: 'Coordonnées & Map'
+  provider: acreat_factory
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /contactez-nous
+    negate: false
+    context_mapping: {  }

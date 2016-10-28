@@ -1,0 +1,27 @@
+uuid: 34a64783-2436-4b14-9600-62795e52b0ec
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acreat
+_core:
+  default_config_hash: Z3nlZUh2mSJP3apMrJWt-duS-aLyP79rcfu_0wpPmDs
+id: acreat_page_title
+theme: acreat
+region: banner
+weight: -2
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Titre de page'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

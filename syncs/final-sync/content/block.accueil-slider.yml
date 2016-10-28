@@ -1,0 +1,22 @@
+id: accueil_slider
+type: slider
+region: banner
+weight: 0
+provider: block_content
+settings:
+  label: 'Accueil: slider'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+fields:
+  field_images:
+    type: images
+    content: image-01.jpg;image-02.jpg;image-03.jpg

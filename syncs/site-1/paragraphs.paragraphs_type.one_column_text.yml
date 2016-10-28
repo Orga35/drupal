@@ -1,0 +1,6 @@
+uuid: a75ef7e7-c08c-4ab2-b6ad-0b500a752a00
+langcode: fr
+status: true
+dependencies: {  }
+id: one_column_text
+label: 'One column text'

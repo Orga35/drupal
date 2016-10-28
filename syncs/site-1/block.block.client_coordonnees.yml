@@ -1,0 +1,20 @@
+uuid: 0a81060e-8beb-460c-9ccd-94ae3b5c0091
+langcode: fr
+status: true
+dependencies:
+  module:
+    - acreat_factory
+  theme:
+    - acreat
+id: client_coordonnees
+theme: acreat
+region: footer_1
+weight: -5
+provider: null
+plugin: client_coordonnees_block
+settings:
+  id: client_coordonnees_block
+  label: Coordonnées
+  provider: acreat_factory
+  label_display: '0'
+visibility: {  }

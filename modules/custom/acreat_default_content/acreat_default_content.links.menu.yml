@@ -1,6 +1,0 @@
-acreat_default_content.import:
-  title: 'Importer les contenus'
-  description: 'Importe les contenus par défaut depuis le répertoire de synchronisation'
-  parent: system.admin_content
-  route_name: acreat_default_content.import
-  weight: 100

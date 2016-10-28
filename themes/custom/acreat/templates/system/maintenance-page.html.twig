@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<section class="content content-3 region">
+  <div class="container">
+    {% if logo %}
+      <a href="{{ front_page }}" title="{{ 'Home'|t }}" class="logo" rel="home">
+        <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+      </a>
+    {% endif %}
+  
+    <p>{{ page.content }}</p>
+  </div>
+</section>

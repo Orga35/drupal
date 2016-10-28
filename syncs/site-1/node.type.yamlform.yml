@@ -1,0 +1,24 @@
+uuid: 77705783-ef94-4058-abbb-4608b0fd8411
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - yamlform
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - footer
+    parent: 'main:'
+_core:
+  default_config_hash: ZF1H81jYaWlZ7jpqb13NniNvxLrglMeuPledkb_Tml0
+name: 'Formulaire YAML'
+type: yamlform
+description: 'Créer une nouvelle page de formulaire YAML.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

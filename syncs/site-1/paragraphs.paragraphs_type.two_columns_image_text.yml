@@ -1,0 +1,6 @@
+uuid: 65fcb942-10fe-4f6f-b11b-6ba12a354cdc
+langcode: fr
+status: true
+dependencies: {  }
+id: two_columns_image_text
+label: 'Two columns image/text'

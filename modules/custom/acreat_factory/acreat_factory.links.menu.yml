@@ -1,0 +1,13 @@
+acreat_factory.admin:
+  title: 'Acreat Factory'
+  description: 'Configuration Acreat Factory'
+  parent: system.admin_config
+  route_name: acreat_factory.admin
+  weight: 100
+
+acreat_factory.client_config_form:
+  title: 'Informations du client'
+  description: 'Configuration des informations du client.'
+  parent: acreat_factory.admin
+  route_name: acreat_factory.client_config_form
+  weight: 0

@@ -1,0 +1,14 @@
+uuid: f7e78fe3-9bda-4812-82ed-f6a68f220a7d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.redacteur
+  module:
+    - user
+id: user_remove_role_action.redacteur
+label: 'Retirer le rôle Rédacteur aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: redacteur

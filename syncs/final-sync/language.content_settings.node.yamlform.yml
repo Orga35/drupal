@@ -1,0 +1,11 @@
+uuid: 47759e55-cb52-481b-9ce7-f5adbdff1bae
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.yamlform
+id: node.yamlform
+target_entity_type_id: node
+target_bundle: yamlform
+default_langcode: site_default
+language_alterable: false

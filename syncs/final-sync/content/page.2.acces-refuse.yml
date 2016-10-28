@@ -1,0 +1,11 @@
+type: page
+uid: 1
+revision: 0
+status: true
+promote: 0
+langcode: fr
+is_403: true
+is_404: false
+is_front_content: false
+title: 'Accès refusé'
+body: "<h1>403 <span>Accès refusé</span></h1>\n<p>&nbsp;</p>\n<p>Vous n'êtes pas autorisé à accéder à cette page/ressource.<br />\nNous vous invitons à reprendre votre navigation depuis la page d'accueil ou à consulter notre plan de site, accessible depuis le pied de page.</p>"

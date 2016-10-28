@@ -1,0 +1,22 @@
+uuid: d25e67e7-ccbe-4854-b024-376c2b72b7f7
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: yamlform
+label: 'Formulaire YAML'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  00765541-2353-4784-8e9e-f2286c729fa5:
+    id: node_type
+    bundles:
+      yamlform: yamlform
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 00765541-2353-4784-8e9e-f2286c729fa5
+selection_logic: and
+weight: -5
+relationships: {  }

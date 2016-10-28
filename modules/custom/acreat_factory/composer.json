@@ -1,0 +1,8 @@
+{
+  "name": "drupal/acreat_factory",
+  "description": "Websites factory by Acreat.",
+  "type": "drupal-module",
+  "authors": [{
+    "name": "Franck LINTANFF",
+  }]
+}

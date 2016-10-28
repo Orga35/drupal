@@ -1,0 +1,30 @@
+uuid: 379c3ec9-ac3c-4a4c-8ba1-aa4d5f501ca8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.actualites
+  module:
+    - system
+    - views
+  theme:
+    - acreat
+id: views_block__actualites_promoted
+theme: acreat
+region: content_5
+weight: -7
+provider: null
+plugin: 'views_block:actualites-promoted'
+settings:
+  id: 'views_block:actualites-promoted'
+  label: Actualités
+  provider: views
+  label_display: visible
+  views_label: Actualités
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

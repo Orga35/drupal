@@ -1,0 +1,5 @@
+services:
+  acreat_actualite.breadcrumb:
+    class: Drupal\acreat_actualite\Controller\BreadcrumbBuild
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }

@@ -1,0 +1,8 @@
+{
+  "name": "drupal/acreat_actualite",
+  "description": "Provides custom features to the Actualité content type.",
+  "type": "drupal-module",
+  "authors": [{
+    "name": "Franck LINTANFF",
+  }]
+}

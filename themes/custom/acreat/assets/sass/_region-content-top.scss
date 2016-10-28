@@ -1,0 +1,47 @@
+//
+// Content Top styles
+// --------------------------------------------------
+
+.region.content-top {
+  background: $content-top-bg;
+  color: $content-top-color;
+  position: relative;
+  
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba($content-top-bg, 0);
+    border-top-color: $content-top-bg;
+    border-width: $content-top-arrow-width;
+    margin-left: -$content-top-arrow-width;
+  }
+  
+  p {
+    font-size: 1.2em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  
+  .tabs {
+    margin-top: 8px;
+    
+    .btn {
+      @include button-variant($text-color, #fff, #fff);
+      
+      &:hover,
+      &:active,
+      &:focus {
+        background: #fff;
+        border-color: #fff;
+        box-shadow: none;
+        color: $link-hover-color;
+      }
+    }
+  }
+}

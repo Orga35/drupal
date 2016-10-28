@@ -1,0 +1,8 @@
+uuid: dda576ab-3ee5-4191-8dbf-cbcafdc0b8ae
+langcode: fr
+status: true
+dependencies: {  }
+id: slider
+label: Slider
+revision: 0
+description: 'Slider d''images.'

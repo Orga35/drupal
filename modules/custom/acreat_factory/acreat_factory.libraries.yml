@@ -1,0 +1,12 @@
+client-coordonnees-map:
+  js:
+    js/client-coordonnees-map.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    
+google-maps:
+    js:
+      https://maps.googleapis.com/maps/api/js: { type: external }

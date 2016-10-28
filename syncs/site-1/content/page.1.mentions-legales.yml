@@ -1,0 +1,59 @@
+type: page
+uid: 1
+revision: 0
+status: true
+promote: 0
+langcode: fr
+is_403: false
+is_404: false
+is_front_content: false
+title: Mentions légales
+link:
+  title: Mentions légales
+  menu: footer
+  weight: 0
+  expanded: false
+body: | 
+  <h2>EDITEUR DU SITE INTERNET</h2>
+  <p>Responsable de publication : <strong>XXX</strong><br />
+  Raison sociale : &nbsp;<strong>XXX</strong><br />
+  Forme Juridique :&nbsp;<strong>XXX</strong>, au capital social de : &nbsp;<strong>XXX</strong> &euro;<br />
+  Adresse du siège social :&nbsp;<strong>XXX</strong><strong>, France</strong><br />
+  Immatriculée au RCS de : <strong>RENNES</strong> (FRANCE) &nbsp;sous le n&deg;&nbsp;<strong>XXX</strong><strong>&nbsp;</strong><strong>XXX</strong><strong>&nbsp;</strong><strong>XXX</strong><strong>&nbsp;</strong><strong>XXX</strong><strong>X</strong><strong>&nbsp;</strong></p>
+  <p>TVA Intracommunautaire : FR <strong>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..</strong><br />
+  Activité : &nbsp;<strong>XXX</strong><br />
+  Numéro de téléphone : +33 (0) <strong>299833983</strong><br />
+  Courrier électronique : <strong>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;@&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.</strong></p>
+  <p>&nbsp;</p>
+  <p>PROFESSION REGLEMENTEE (agence immo par exemple) :<br />
+  Garantie financière :<strong>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..</strong><br />
+  Carte professionnelle :<strong>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..</strong><br />
+  Autorisation d&#39;exercer :<strong>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;...</strong></p>
+  <h2>CONCEPTEUR ET HEBERGEUR DU SITE INTERNET&nbsp;</h2>
+  <p>Raison sociale : <a href="http://www.acreat.com" target="_blank" title="Agence web à Rennes">ACREAT</a><br />
+  Forme Juridique : Société à responsabilité limitée<br />
+  Adresse du siège social : 29 rue du Puits Mauger, 35000 Rennes, France<br />
+  Numéro de téléphone : +33 (0)2 53 35 81 79<br />
+  Courrier électronique : info@acreat.com</p>
+  <h2>CREDITS CREATIONS ET VISUELS&nbsp;</h2>
+  <p>Photographe : <strong>XXX</strong><br />
+  Vidéo : <strong>XXX</strong></p>
+  <h2>DECLARATION CNIL</h2>
+  <p>Date : <strong>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..</strong><br />
+  Numéro :<strong>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..</strong></p>
+  <h2>CONDITIONS GÉNÉRALES D&rsquo;UTILISATION</h2>
+  <p>Ce site web est un site d&rsquo;informations générales en langue française.</p>
+  <p>Les informations diffusées sur le site (textes, graphiques, photos, simulations, indications, &hellip;) ont un caractère purement informatif et ne sont données qu&#39;à titre indicatif. Malgré tout le soin apporté à sa réalisation et à son exactitude, ce site ne peut pas constituer un document contractuel et ne saurait fonder une quelconque réclamation.</p>
+  <p>L&#39;accès au site est libre et anonyme.</p>
+  <p>L&#39;utilisateur reconnaît avoir pris connaissance des présentes CGU et déclare les accepter sans restriction ni réserve.</p>
+  <h2>PROPRIÉTÉ INTELLECTUELLE ET COPYRIGHT</h2>
+  <p>L&#39;ensemble des éléments du site (textes, photographies, documents...) sont, sauf dispositions contraires, la propriété intellectuelle exclusive de la société <strong>XXX / LOCAM</strong>. Par conséquent, toute reproduction, représentation, transmission, diffusion, partielle ou totale, est interdite selon les termes de l&#39;article L. 122-4 du CPI sous réserve des exceptions prévues à l&#39;article L. 122-5 du CPI. Toute utilisation de données figurant sur ce site nécessite une autorisation préalable et expresse. A défaut, le délit de contrefaçon constitué est sanctionné sur le fondement des articles L. 335-2 et suivants du CPI.</p>
+  <p>Pour toute exploitation autorisée de tout ou partie du contenu du site, faire figurer le nom de l&#39;auteur, ses qualités, l&#39;année de publication et la source.</p>
+  <h2>LIENS HYPERTEXTES</h2>
+  <p>L&#39;éditeur ne saurait engager sa responsabilité sur le contenu des informations figurant sur les pages auxquelles les liens hypertextes du présent site renvoient.</p>
+  <h2>COOKIES</h2>
+  <p>Des cookies sont utilisés afin de permettre une navigation optimale et un meilleur fonctionnement du site web. Les &laquo; cookies &raquo; sont des données stockées sur l&rsquo;équipement terminal (ordinateur ou autre périphérique connecté à Internet) des utilisateurs du site web. Ils permettent de stocker des informations relatives à la navigation sur le site web (date, page, heures), ainsi qu&rsquo;aux éventuelles données saisies par les utilisateurs au cours de leur visite (recherches, login, email, mot de passe).</p>
+  <p>La durée de vie des cookies utilisés sur le site web est de 13 mois maximum à partir de la date de leur stockage dans l&#39;équipement terminal de l&#39;utilisateur.</p>
+  <p>L&rsquo;utilisateur dispose de la possibilité de bloquer, modifier la durée de conservation, ou supprimer les cookies via l&rsquo;interface de son navigateur. L&#39;utilisateur reconnaît cependant que dans le cas où il supprimerait ou n&#39;accepterait pas les cookies la navigation sur le site ne pourrait être optimale. De ce fait, tout dysfonctionnement liés à la désactivation des cookies ne saurait en aucun cas engager la responsabilité de l&#39;éditeur ni du concepteur du site web.</p>
+  <h2>DROIT D&rsquo;ACCÈS</h2>
+  <p>Conformément au chapitre V de la loi &quot;Informatique et Libertés&quot; du 6 janvier 1978 (modifiée par la loi n&deg; 2004-801 du 6 août 2004 relative à l&#39;informatique, aux fichiers et aux libertés), vous disposez d&#39;un droit d&#39;accès, d&#39;interrogation, &nbsp;d&#39;opposition et de rectification de vos informations personnelles. Pour mettre en œuvre ces droit vous devez en faire la demande par courrier électronique ou encore par courrier postales aux adresses (électronique ou postale) mentionnées dans les Mentions Légales.</p>

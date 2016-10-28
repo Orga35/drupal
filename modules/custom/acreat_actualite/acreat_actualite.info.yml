@@ -1,0 +1,6 @@
+description: 'Provides custom features to the "Actualité" content type.'
+core: 8.x
+hidden: false
+name: Acreat Actualité
+package: Acreat
+type: module

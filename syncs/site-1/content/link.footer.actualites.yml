@@ -1,0 +1,5 @@
+title: Actualités
+path: internal:/actualites
+menu: footer
+weight: -98
+expanded: false

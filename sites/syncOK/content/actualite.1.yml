@@ -1,8 +1,0 @@
-type: actualite
-uid: 1
-revision: 0
-status: true
-promote: 1
-langcode: fr
-title: Une première actualité
-body: <p>Voici une première actualité automatiquement créée lors de l'installation du site.</p>

@@ -1,0 +1,22 @@
+uuid: 8e069776-b2dc-420a-a153-ce7730642db0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acreat
+_core:
+  default_config_hash: 80N66GdzEvwqi1m-_GZ-ulkk8AJG9beoXcZ4-pMVKjI
+id: acreat_content
+theme: acreat
+region: content_3
+weight: -7
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  provider: system
+  label_display: '0'
+visibility: {  }

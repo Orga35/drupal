@@ -1,0 +1,41 @@
+cdn_provider: ''
+_core:
+  default_config_hash: _5qrDuRmWmRVjW00si3U1s1NrgrocA4N653EYGRfgEE
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: 'public://favicon.ico'
+  url: 'http://local.8.acreat.com/sites/acreat.com/files/favicon.ico'
+  use_default: false
+schemas:
+  bootstrap: 8000
+  acreat: 8000
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: false
+logo:
+  path: 'public://logo.png'
+  url: ''
+  use_default: false
+button_colorize: 0
+button_iconize: 0
+table_responsive: '-1'
+table: ''
+modal_enabled: 0
+popover_enabled: 0
+tooltip_placement: 'auto top'
+breadcrumb_home: 1
+region_wells:
+  header: ''
+  banner: ''
+  content_top: ''
+  content_1: ''
+  content_2: ''
+  content_3: ''
+  content_4: ''
+  content_5: ''
+  footer_1: ''
+  footer_2: ''
+tooltip_enabled: 0
+langcode: fr

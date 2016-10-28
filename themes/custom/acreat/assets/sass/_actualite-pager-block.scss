@@ -1,0 +1,15 @@
+//
+// Actualité Pager Block styles
+// --------------------------------------------------
+
+.block-acreat-actualite-pager-block {
+  @extend .row;
+
+  .previous {
+    @extend .col-xs-6;
+  }
+
+  .next {
+    @extend .col-xs-6;
+  }
+}

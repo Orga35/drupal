@@ -1,0 +1,28 @@
+uuid: 210c8dde-7074-430e-b6ed-574d172dad40
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+    - yamlform
+  theme:
+    - acreat
+id: contact_form
+theme: acreat
+region: content_3
+weight: -5
+provider: null
+plugin: yamlform_block
+settings:
+  id: yamlform_block
+  label: 'Formulaire de contact'
+  provider: yamlform
+  label_display: '0'
+  yamlform_id: contact
+  default_data: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /contactez-nous
+    negate: false
+    context_mapping: {  }

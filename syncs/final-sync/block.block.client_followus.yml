@@ -1,0 +1,20 @@
+uuid: f8c721e9-737a-4e51-8a4f-4e074dea272d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - acreat_factory
+  theme:
+    - acreat
+id: client_followus
+theme: acreat
+region: footer_1
+weight: -3
+provider: null
+plugin: client_followus_block
+settings:
+  id: client_followus_block
+  label: 'Follow Us'
+  provider: acreat_factory
+  label_display: '0'
+visibility: {  }

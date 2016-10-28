@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{ logo }}
+        
+        <div class="row">
+          <div class="col-xs-12">
+            {{ form.name }}
+          </div>
+          <div class="col-xs-12">
+            {{ form.pass }}
+          </div>
+          
+          {% if user_pass_link %}
+            <div class="col-xs-12">
+                <p>{{ user_pass_link }}</p>
+            </div>
+          {% endif %}
+          
+          <div class="col-xs-12">
+            {{ form.actions }}
+            {{ form.form_build_id }} {# required #}
+            {{ form.form_id }} {# required #}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% if user_register_link %}
+      <p>{{ user_register_link }}</p>
+    {% endif %}
+  </div>
+</div>

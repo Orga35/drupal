@@ -1,0 +1,21 @@
+uuid: 81f4e5e4-3548-4b55-b704-03ff252728e9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_1
+    - paragraphs.paragraphs_type.two_columns_image_text
+  module:
+    - text
+id: paragraph.two_columns_image_text.field_text_1
+field_name: field_text_1
+entity_type: paragraph
+bundle: two_columns_image_text
+label: Texte
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

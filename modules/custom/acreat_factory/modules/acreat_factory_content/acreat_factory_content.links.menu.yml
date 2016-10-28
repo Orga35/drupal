@@ -1,0 +1,13 @@
+acreat_factory_content.admin:
+  title: 'Acreat Factory Content'
+  description: 'Configuration Acreat Factory Content'
+  parent: acreat_factory.admin
+  route_name: acreat_factory_content.admin
+  weight: 0
+
+acreat_factory_content.import:
+  title: 'Importer les contenus'
+  description: 'Création des contenus par défaut.'
+  parent: acreat_factory_content.admin
+  route_name: acreat_factory_content.import
+  weight: 0

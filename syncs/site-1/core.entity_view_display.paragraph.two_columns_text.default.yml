@@ -1,0 +1,30 @@
+uuid: 2b520fb7-6513-450f-8c0f-5803b977b752
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.two_columns_text.field_text_1
+    - field.field.paragraph.two_columns_text.field_text_2
+    - paragraphs.paragraphs_type.two_columns_text
+  module:
+    - text
+id: paragraph.two_columns_text.default
+targetEntityType: paragraph
+bundle: two_columns_text
+mode: default
+content:
+  field_text_1:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_text_2:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

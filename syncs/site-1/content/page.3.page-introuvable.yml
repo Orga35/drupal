@@ -1,0 +1,15 @@
+type: page
+uid: 1
+revision: 0
+status: true
+promote: 0
+langcode: fr
+is_403: false
+is_404: true
+is_front_content: false
+title: Page introuvable
+body: |
+  <h1>404 <span>Page introuvable</span></h1>
+  <p>&nbsp;</p>
+  <p>La page/ressource que vous recherchez n'existe plus ou a été déplacée.<br />
+  Nous vous invitons à reprendre votre navigation depuis la page d'accueil ou à consulter notre plan de site, accessible depuis le pied de page.</p>

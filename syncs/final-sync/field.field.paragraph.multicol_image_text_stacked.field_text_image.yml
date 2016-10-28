@@ -1,0 +1,45 @@
+uuid: 1393d73e-9f2e-4a4b-94f6-865a67a135d1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_image
+    - paragraphs.paragraphs_type.multicol_image_text_stacked
+    - paragraphs.paragraphs_type.two_columns_image_text
+  module:
+    - entity_reference_revisions
+id: paragraph.multicol_image_text_stacked.field_text_image
+field_name: field_text_image
+entity_type: paragraph
+bundle: multicol_image_text_stacked
+label: Text/Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      two_columns_image_text: two_columns_image_text
+    target_bundles_drag_drop:
+      multicol_image_text_stacked:
+        weight: 7
+        enabled: false
+      one_column_text:
+        weight: 8
+        enabled: false
+      three_columns_text:
+        weight: 9
+        enabled: false
+      two_columns_image_text:
+        enabled: true
+        weight: 10
+      two_columns_text:
+        weight: 11
+        enabled: false
+      two_columns_text_image:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Acreat Factory
+ */
+
+use \Drupal\core\Config\Config;
+use \Drupal\core\Site\Settings;
+use \Drupal\core\Url;
+
+
+/**
+ * Implements hook_theme()
+ */
+function acreat_factory_theme($existing, $type, $theme, $path) {
+  return array(
+    'client_coordonnees' => array(
+      'variables' => array(
+        'client' => NULL
+      ),
+    ),
+    'client_coordonnees_map' => array(
+      'variables' => array(
+        'client' => NULL
+      ),
+    ),
+    'client_followus' => array(
+      'variables' => array(
+        'client' => NULL
+      ),
+    ),
+    'client_copyright' => array(
+      'variables' => array(
+        'client' => NULL
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_html()
+ */
+function acreat_factory_preprocess_html(&$variables) {
+  // Variables nécessaires au bon fonctionnement de la carte du block Coordonnées
+  $variables['#attached']['library'][] = 'acreat_factory/adminimal-admin-toolbar';
+}
+
+/**
+ * Implements hook_preprocess_block()
+ */
+function acreat_factory_preprocess_block(&$variables) {
+  if ($variables['elements']['#id'] == 'client_coordonnees_map') {
+    // URL absolue du marker
+    $maps_marker_url = Url::fromUri(file_create_url('public://maps-marker.png'))->setAbsolute(true);
+
+    // Chargement des informations du client
+    $acreat_factory_config = \Drupal::config('acreat_factory.client');
+    
+    // Variables nécessaires au bon fonctionnement de la carte du block Coordonnées
+    $variables['#attached']['library'][] = 'acreat_factory/google-maps';
+    $variables['#attached']['library'][] = 'acreat_factory/client-coordonnees-map';
+    $variables['#attached']['drupalSettings']['acreatFactory']['markerUrl'] = $maps_marker_url->getUri();
+    $variables['#attached']['drupalSettings']['acreatFactory']['mapsStyles'] = $acreat_factory_config->get("client.maps_styles");
+  }
+}

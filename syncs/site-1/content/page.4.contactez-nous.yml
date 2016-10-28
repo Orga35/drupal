@@ -1,0 +1,18 @@
+type: page
+uid: 1
+revision: 0
+status: true
+promote: 0
+langcode: fr
+is_403: false
+is_404: false
+is_front_content: false
+title: Contactez-nous
+link:
+  title: Contactez-nous
+  menu: main
+  weight: 0
+  expanded: false
+body: | 
+  <p>Pour un traitement rapide de votre demande, nous vous invitons à nous contacter en remplissant le formulaire ci-dessous.</p>
+  <p>&nbsp;</p>

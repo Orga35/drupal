@@ -1,0 +1,9 @@
+uuid: 4abdf4d4-68d7-437e-9f84-178556edc14d
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: TFhY-GcRNJp9ZQVlGHYbuxmLKOW3z7cpK5lQAm8yrCc
+id: months
+label: Mois
+options: "January: January\nFebruary: February\nMarch: March\nApril: April\nMay: May\nJune: June\nJuly: July\nAugust: August\nSeptember: September\nOctober: October\nNovember: November\nDecember: December\n"

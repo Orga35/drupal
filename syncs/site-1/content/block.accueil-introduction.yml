@@ -1,0 +1,23 @@
+id: accueil_introduction
+type: basic
+region: content_top
+weight: 0
+provider: block_content
+settings:
+  label: 'Accueil: introduction'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+fields:
+  body:
+    type: html
+    content: | 
+      <p style="text-align: center;">Ut vel est vulputate, venenatis tortor ac, dictum libero. Sed luctus urna ut nisi tincidunt aliquam. Sed risus velit, auctor vel metus sit amet, laoreet sodales justo. Etiam ullamcorper justo orci.</p>

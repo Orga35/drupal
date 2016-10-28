@@ -1,0 +1,25 @@
+uuid: f5d4566e-282c-4e9a-bd14-615ef84d79b7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.one_column_text.field_text_1
+    - paragraphs.paragraphs_type.one_column_text
+  module:
+    - text
+id: paragraph.one_column_text.default
+targetEntityType: paragraph
+bundle: one_column_text
+mode: default
+content:
+  field_text_1:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+hidden:
+  created: true
+  status: true
+  uid: true

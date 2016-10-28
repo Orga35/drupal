@@ -1,0 +1,98 @@
+uuid: 258f0285-9b15-4802-884c-175adcf2a4ea
+langcode: fr
+status: true
+dependencies: {  }
+uid: 1
+template: false
+id: newsletter
+title: Newsletter
+description: 'Inscription à la newsletter.'
+elements: "mail:\n  '#type': email\n  '#title': 'Adresse e-mail'\n  '#description': '<p>Saisissez votre adresse e-mail</p>'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Adresse e-mail'\n  '#required': true\n  '#required_error': 'Veuillez saisir votre adresse e-mail.'\n  '#unique': true\n  '#format': value\n"
+settings:
+  page: false
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: 'S''inscrire'
+  form_exception_message: ''
+  form_closed_message: ''
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_novalidate: true
+  form_autofocus: false
+  form_details_toggle: false
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: false
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: message
+  confirmation_message: '<p>Votre inscription &agrave; notre newsletter a &eacute;t&eacute; enregistr&eacute;e avec succ&egrave;s.</p>'
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  submission_notification:
+    id: email
+    label: 'Notification de soumission aux administrateurs'
+    handler_id: submission_notification
+    status: true
+    weight: 0
+    settings:
+      to_mail: default
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: default
+      from_name: default
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

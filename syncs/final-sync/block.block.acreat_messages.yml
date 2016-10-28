@@ -1,0 +1,22 @@
+uuid: 91578681-5474-459e-a638-134fc716591b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acreat
+_core:
+  default_config_hash: YqKTtloWJ8FjLtfVNfrHaK6kVgxT67lC1cJ3j6i6WLo
+id: acreat_messages
+theme: acreat
+region: content_1
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messages de statut'
+  provider: system
+  label_display: '0'
+visibility: {  }

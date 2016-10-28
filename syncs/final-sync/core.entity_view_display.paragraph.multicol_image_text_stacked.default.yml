@@ -1,0 +1,25 @@
+uuid: 38f6103e-1d1a-4b65-a9b9-cc120cf9decf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multicol_image_text_stacked.field_text_image
+    - paragraphs.paragraphs_type.multicol_image_text_stacked
+  module:
+    - entity_reference_revisions
+id: paragraph.multicol_image_text_stacked.default
+targetEntityType: paragraph
+bundle: multicol_image_text_stacked
+mode: default
+content:
+  field_text_image:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

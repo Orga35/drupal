@@ -1,0 +1,6 @@
+uuid: 0ccc8358-bdce-4a1f-b468-f49c335a776a
+langcode: fr
+status: true
+dependencies: {  }
+id: two_columns_text
+label: 'Two columns text'

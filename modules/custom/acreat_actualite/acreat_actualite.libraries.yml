@@ -1,0 +1,5 @@
+drupal.acreat_actualite:
+  version: 1.0
+  css:
+    theme:
+      css/acreat_actualite.css: {}

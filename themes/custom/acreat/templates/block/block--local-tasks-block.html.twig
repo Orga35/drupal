@@ -1,0 +1,19 @@
+{% extends "block--bare.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for tabs.
+ *
+ * @ingroup templates
+ */
+#}
+{% block content %}
+  {% if content %}
+    <nav class="tabs btn-group pull-right btn-group" role="navigation" aria-label="{{ 'Tabs'|t }}">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog"></i>&nbsp;&nbsp;&nbsp;<span class="caret"></span>
+      </button>
+      {{ content }}
+    </nav>
+  {% endif %}
+{% endblock %}

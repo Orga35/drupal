@@ -1,0 +1,21 @@
+uuid: da27b7c5-1b31-4f76-90bd-29fd2b70b3df
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_1
+    - paragraphs.paragraphs_type.three_columns_text
+  module:
+    - text
+id: paragraph.three_columns_text.field_text_1
+field_name: field_text_1
+entity_type: paragraph
+bundle: three_columns_text
+label: Texte
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

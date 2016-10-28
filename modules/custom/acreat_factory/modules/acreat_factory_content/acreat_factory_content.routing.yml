@@ -1,0 +1,17 @@
+acreat_factory_content.admin:
+  path: '/admin/config/acreat-factory/content'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Acreat Factory Content'
+  requirements:
+    _permission: 'administer modules'
+
+acreat_factory_content.import:
+  path: '/admin/config/acreat-factory/content/import'
+  defaults:
+    _controller: '\Drupal\acreat_factory_content\Controller\AcreatFactoryContentController::import'
+    _title: 'Création des contenus par défaut'
+    report_type: NULL
+    name: NULL
+  requirements:
+    _permission: 'administer modules'

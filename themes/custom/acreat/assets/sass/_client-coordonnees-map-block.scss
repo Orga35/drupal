@@ -1,0 +1,45 @@
+//
+// Client Information Coordonnées Block styles
+// --------------------------------------------------
+
+.block-coordonnees-map {
+  @include make-xs-column(12);
+  @include make-xs-column-push(0);
+  @include make-sm-column(6);
+  @include make-sm-column-push(6);
+  @include make-md-column(6);
+  @include make-md-column-push(6);
+  @include make-lg-column(6);
+  @include make-lg-column-push(6);
+  font-size: 1.2em;
+  text-align: center;
+  
+  P {
+    margin-bottom: 2em;
+  }
+  
+  P.numbers {
+    font-size: 1.4em;
+    color: $brand-primary;
+  }
+  
+  .fa {
+    margin-right: 10px;
+  }
+  
+  .panel {
+    @include box-shadow(0 0 0 rgba(0,0,0,0));
+    background: lighten($panel-default-border, 10%);
+    
+    .map {
+      background: lighten($panel-default-border, 10%);
+      height: 270px;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .block-coordonnees {
+    padding-bottom: 15px;
+  }
+}

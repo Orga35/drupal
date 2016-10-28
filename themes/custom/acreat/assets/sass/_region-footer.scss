@@ -1,0 +1,31 @@
+//
+// Footer styles
+// --------------------------------------------------
+
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.footer a {
+  color: $footer-color;
+}
+
+.footer .region {
+  background: transparent;
+  color: $footer-color;
+}
+
+.footer .block {
+  padding-top: 1em;
+}
+
+.footer-2 .block {
+  font-size: $font-size-small;
+}
+
+@media (max-width: $screen-sm-max) {
+  .footer {
+    text-align: center;
+  }
+}

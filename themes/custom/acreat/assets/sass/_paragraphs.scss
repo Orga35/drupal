@@ -1,0 +1,104 @@
+//
+// Paragraphs styles
+// --------------------------------------------------
+
+/* Paragraphs Collection */
+.paragraph {
+  @extend .row;
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+/* Paragraph: 1 column [TEXT] */
+.paragraph--type--text .field:nth-child(1) {
+  @extend .col-xs-12;
+}
+
+/* Paragraph: 2 columns [TEXT]+[TEXT] */
+.paragraph.paragraph--type--two-columns-text .field {
+  @extend .col-xs-12;
+  @extend .col-sm-6;
+  @extend .col-md-6;
+  @extend .col-lg-6;
+}
+
+/* Paragraph: 3 columns [TEXT]+[TEXT]+[TEXT] */
+.paragraph.paragraph--type--three-columns-text .field {
+  @extend .col-xs-12;
+  @extend .col-sm-12;
+  @extend .col-md-4;
+  @extend .col-lg-4;
+}
+
+/* Paragraph: 2 columns [IMAGE]+[TEXT] / Image */
+.paragraph.paragraph--type--two-columns-image-text .field:nth-child(1) {
+  @extend .col-xs-12;
+  @extend .col-sm-5;
+  @extend .col-md-4;
+  @extend .col-lg-4;
+}
+
+/* Paragraph: 2 columns [IMAGE]+[TEXT] / Text */
+.paragraph.paragraph--type--two-columns-image-text .field:nth-child(2) {
+  @extend .col-xs-12;
+  @extend .col-sm-7;
+  @extend .col-md-8;
+  @extend .col-lg-8;
+}
+
+/* Paragraph: 2 columns [TEXT]+[IMAGE] / Text */
+.paragraph.paragraph--type--two-columns-text-image .field:nth-child(1) {
+  @extend .col-xs-12;
+  @extend .col-sm-5;
+  @extend .col-md-4;
+  @extend .col-lg-4;
+}
+
+/* Paragraph: 2 columns [TEXT]+[IMAGE] / Image */
+.paragraph.paragraph--type--two-columns-text-image .field:nth-child(2) {
+  @extend .col-xs-12;
+  @extend .col-sm-7;
+  @extend .col-md-8;
+  @extend .col-lg-8;
+}
+
+/* Paragraph: 1 column [IMAGE]+[TEXT] stacked */
+
+
+/* Paragraph: 2 columns [IMAGE]+[TEXT] / Image */
+.paragraph--type--multicol-image-text-stacked {
+  .paragraph .field__items {
+    @extend .row;
+    
+    .field__item {
+      @extend .col-xs-12;
+      @extend .col-sm-12;
+      @extend .col-md-4;
+      @extend .col-lg-4;
+    }
+  }
+  
+  .paragraph.paragraph--type--two-columns-image-text .field {
+    @extend .col-xs-12;
+    @extend .col-sm-12;
+    @extend .col-md-12;
+    @extend .col-lg-12;
+  }
+}
+
+/* Paragraph: 2 columns [IMAGE]+[TEXT] / Image */
+.paragraph.paragraph--type--two-columns-image-text .field:nth-child(1) {
+  @extend .col-xs-12;
+  @extend .col-sm-5;
+  @extend .col-md-4;
+  @extend .col-lg-4;
+}
+
+/* Paragraph: 2 columns [IMAGE]+[TEXT] / Text */
+.paragraph.paragraph--type--two-columns-image-text .field:nth-child(2) {
+  @extend .col-xs-12;
+  @extend .col-sm-7;
+  @extend .col-md-8;
+  @extend .col-lg-8;
+}

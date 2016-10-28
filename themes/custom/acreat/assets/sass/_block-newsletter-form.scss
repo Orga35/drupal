@@ -1,0 +1,72 @@
+//
+// YAML Newsletter Form styles
+// --------------------------------------------------
+
+.block-newsletter-form {
+  @include make-xs-column(10);
+  @include make-xs-column-offset(1);
+  @include make-sm-column(6);
+  @include make-sm-column-offset(3);
+  @include make-md-column(4);
+  @include make-md-column-offset(0);
+  @include make-lg-column(4);
+  @include make-lg-column-offset(0);
+  
+  FORM {
+    @include make-row();
+  }
+
+  .form-item {
+    @include make-xs-column(12);
+    @include make-sm-column(9);
+    @include make-md-column(8);
+    @include make-lg-column(8);
+    padding-right: 0;
+  }
+  
+  .form-actions {
+    @include make-xs-column(12);
+    @include make-sm-column(3);
+    @include make-md-column(4);
+    @include make-lg-column(4);
+    padding-left: 0;
+  }
+  
+  .form-control {
+    border-color: $input-bg;
+  }
+  
+  .btn {
+    @extend .btn-primary;
+    height: $input-height-base;
+    color: #fff;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .block-newsletter-form {
+    text-align: left;
+    
+    p {
+      text-align: center;
+    }
+   
+    .btn {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .block-newsletter-form {
+    .form-item {
+      padding-right: ($grid-gutter-width / 2);
+    }
+    
+    .form-actions {
+      padding-left: ($grid-gutter-width / 2);
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+uuid: 8235e994-d59a-4017-a4f1-5712de335e44
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multicol_image_text_stacked.field_text_image
+    - paragraphs.paragraphs_type.multicol_image_text_stacked
+  module:
+    - paragraphs
+id: paragraph.multicol_image_text_stacked.default
+targetEntityType: paragraph
+bundle: multicol_image_text_stacked
+mode: default
+content:
+  field_text_image:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

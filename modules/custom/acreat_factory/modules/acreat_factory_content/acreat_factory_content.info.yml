@@ -1,0 +1,7 @@
+name: Acreat Factory Content
+core: 8.x
+description: This module is inspired by Default Content and automatically creates content declared in sync directory.
+package: Acreat
+type: module
+dependencies:
+  - acreat_factory

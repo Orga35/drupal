@@ -1,0 +1,83 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    
+    
+    {% if user_login_link %}
+      <p>Déjà inscrit(e) ? {{ user_login_link }}</p>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{ logo }}
+        
+        <div class="row">
+          {% if form.field_civilite %}
+            {{ form.field_civilite }}
+          {% endif %}
+          
+          {% if form.field_prenom %}
+            {{ form.field_prenom }}
+          {% endif %}
+          
+          {% if form.field_nom %}
+            {{ form.field_nom }}
+          {% endif %}
+          
+          {% if form.field_adresse %}  
+            {{ form.field_adresse }}
+          {% endif %}
+            
+          {% if form.field_code_postal %}  
+            {{ form.field_code_postal }}
+          {% endif %}
+            
+          {% if form.field_ville %}  
+            {{ form.field_ville }}
+          {% endif %}
+            
+          {% if form.field_telephone %}  
+            {{ form.field_telephone }}
+          {% endif %}
+            
+          {% if form.field_mobile %}  
+            {{ form.field_mobile }}
+          {% endif %}
+          
+          <div class="col-xs-12">
+            <h2>Votre compte</h2>
+          </div> 
+            
+          {% if form.account.name %}  
+            {{ form.account.name }}
+          {% endif %}
+          
+          {% if form.account.mail %}  
+            {{ form.account.mail }}
+          {% endif %}
+            
+          {% if form.account.pass %}  
+            {{ form.account.pass }}
+          {% endif %}
+          
+          <div class="col-xs-12">
+            {{ form.actions }}
+            {{ form.form_build_id }} {# required #}
+            {{ form.form_id }} {# required #}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

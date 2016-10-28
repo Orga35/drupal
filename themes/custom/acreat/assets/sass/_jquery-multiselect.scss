@@ -1,0 +1,152 @@
+//
+// jQuery Multiselect styles
+// --------------------------------------------------
+
+.ui-multiselect {
+  @extend .form-control;
+  font-family: $font-family-sans-serif;
+  text-align: left;
+  width: 100% !important;
+  
+  span.ui-icon {
+    float: right;
+  }
+  
+  .ui-multiselect-checkboxes {
+    input {
+      position: absolute !important;
+      top: auto !important;
+      left: -9999px;
+    }
+    
+    label {
+      padding: 5px !important;
+    }
+  }
+}
+
+.ui-multiselect-header {
+  margin-bottom: 3px;
+  padding: 3px 0 3px 4px;
+  
+  ul {
+    font-size: 0.9em;
+    
+    li {
+      float: left;
+      padding: 0 10px 0 0;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  span.ui-icon {
+    float: left;
+  }
+  
+  li.ui-multiselect-close {
+    float: right;
+    text-align: right;
+    padding-right: 0;
+    margin-top: 2px;
+  }
+}
+
+.ui-multiselect-menu {
+  @include border-top-radius(0);
+  @include border-right-radius(0);
+  @include border-bottom-radius(0);
+  @include border-left-radius(0);
+  border-color: $input-border;
+  border-top: none;
+  display: none;
+  padding: 5px;
+  position: absolute;
+  z-index: 10000;
+  text-align: left;
+}
+
+.ui-multiselect-checkboxes {
+  position: relative;
+  overflow-y: auto;
+  
+  label {
+    @include border-top-radius(0);
+    @include border-right-radius(0);
+    @include border-bottom-radius(0);
+    @include border-left-radius(0);
+    @include transition(all ease-in-out .2s);
+    background: transparent;
+    cursor: default;
+    display: block;
+    padding: 5px;
+    margin: 0 0 1px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    input {
+      position: relative;
+      float: left;
+      margin: 2px 5px 0 0;
+    }
+  }
+  
+  label.ui-state-active {
+    background: lighten($brand-primary, 50%);
+    border: none;
+    color: $brand-primary;
+    font-weight: normal;
+  }
+  
+  label.ui-state-hover {
+    background: $brand-primary;
+    border: none;
+    color: #ffffff;
+    font-weight: normal;
+  }
+  
+  li {
+    clear: both;
+    font-size: 0.9em;
+  }
+  
+  li.ui-multiselect-optgroup-label {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid;
+    
+    a {
+      display: block;
+      padding: 3px;
+      margin: 1px 0;
+      text-decoration: none;
+    }
+  }
+}
+
+.ui-multiselect-single {
+  label {
+    input {
+      display: none;
+    }
+  }
+}
+
+* html .ui-multiselect-checkboxes label {
+  border:none;
+}
+
+
+@media print{
+  .ui-multiselect-menu {
+    display: none;
+  }
+}

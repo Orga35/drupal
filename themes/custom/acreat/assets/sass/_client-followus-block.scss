@@ -1,0 +1,70 @@
+//
+// Client Information Follow us styles
+// --------------------------------------------------
+
+
+.block-followus {
+  @include make-xs-column(12);
+  @include make-sm-column(12);
+  @include make-md-column(3);
+  @include make-lg-column(4);
+  
+  .btn-circle {
+    border: none;
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.70;
+    border-radius: 25px;
+  }
+  
+  .fa-facebook {
+    background: transparent;
+    color: $footer-color;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      @include button-variant(#fff, $facebook_color, $facebook_color);
+    }
+  }
+  
+  .fa-twitter {
+    background: transparent;
+    color: $footer-color;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      @include button-variant(#fff, $twitter_color, $twitter_color);
+    }
+  }
+  
+  .fa-google-plus {
+    background: transparent;
+    color: $footer-color;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      @include button-variant(#fff, $google_plus_color, $google_plus_color);
+    }
+  }
+}
+
+@media (max-width: $screen-md-max) {
+  .block-followus {
+    text-align: right;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .block-followus {
+    text-align: center;
+    
+    p:first-child {
+      display: none;
+    }
+  }
+}

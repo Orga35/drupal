@@ -1,0 +1,32 @@
+uuid: 05043720-c036-4dcd-a08c-e40ed26e512c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_adresse
+    - field.field.user.user.field_civilite
+    - field.field.user.user.field_code_postal
+    - field.field.user.user.field_mobile
+    - field.field.user.user.field_nom
+    - field.field.user.user.field_prenom
+    - field.field.user.user.field_telephone
+    - field.field.user.user.field_ville
+  module:
+    - user
+_core:
+  default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content: {  }
+hidden:
+  field_adresse: true
+  field_civilite: true
+  field_code_postal: true
+  field_mobile: true
+  field_nom: true
+  field_prenom: true
+  field_telephone: true
+  field_ville: true
+  member_for: true

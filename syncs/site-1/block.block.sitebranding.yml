@@ -1,0 +1,28 @@
+uuid: fec6b38c-51ef-4fc8-b5fb-0584a71acd84
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acreat
+id: sitebranding
+theme: acreat
+region: header
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/login\r\n/user/password\r\n/user/register"
+    negate: true
+    context_mapping: {  }

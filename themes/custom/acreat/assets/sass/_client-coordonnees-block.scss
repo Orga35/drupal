@@ -1,0 +1,24 @@
+//
+// Client Information Coordonnées Block styles
+// --------------------------------------------------
+
+.block-coordonnees {
+  @include make-xs-column(12);
+  @include make-sm-column(12);
+  @include make-md-column(5);
+  @include make-lg-column(4);
+  
+  SPAN.phone {
+    margin-right: 1em;
+  }
+  
+  .fa {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .block-coordonnees {
+    padding-bottom: 15px;
+  }
+}

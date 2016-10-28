@@ -1,0 +1,22 @@
+uuid: deaeaae9-1b5e-4f8b-859e-219f09188add
+langcode: fr
+status: true
+dependencies:
+  module:
+    - yamlform
+  theme:
+    - acreat
+id: newsletter_form
+theme: acreat
+region: footer_1
+weight: -4
+provider: null
+plugin: yamlform_block
+settings:
+  id: yamlform_block
+  label: 'Recevez nos dernières actus :'
+  provider: yamlform
+  label_display: visible
+  yamlform_id: newsletter
+  default_data: ''
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: e94b7201-d018-4f31-8a8f-ca6161e3d374
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_2
+    - paragraphs.paragraphs_type.two_columns_text
+  module:
+    - text
+id: paragraph.two_columns_text.field_text_2
+field_name: field_text_2
+entity_type: paragraph
+bundle: two_columns_text
+label: 'Texte 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

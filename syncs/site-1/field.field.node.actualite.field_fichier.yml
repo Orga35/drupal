@@ -1,0 +1,27 @@
+uuid: 2085bd11-04cd-4e03-835e-17faa082cdde
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fichier
+    - node.type.actualite
+  module:
+    - file
+id: node.actualite.field_fichier
+field_name: field_fichier
+entity_type: node
+bundle: actualite
+label: 'Fichiers joints'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'actualite/fichier/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx pdf'
+  max_filesize: '5 Mb'
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

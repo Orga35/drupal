@@ -1,0 +1,10 @@
+{
+  "name": "drupal/acreat_factory_content",
+  "description": "Creates default content for a website installation",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+    "symfony/yaml": "^3.1"
+  }
+}

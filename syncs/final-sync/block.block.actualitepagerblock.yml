@@ -1,0 +1,28 @@
+uuid: 20419eac-dee1-4d1f-be56-9743d722a3a0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - acreat_actualite
+    - ctools
+  theme:
+    - acreat
+id: actualitepagerblock
+theme: acreat
+region: content_3
+weight: -4
+provider: null
+plugin: actualite_pager_block
+settings:
+  id: actualite_pager_block
+  label: 'Actualité Pager Block'
+  provider: acreat_actualite
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      actualite: actualite
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

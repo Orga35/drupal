@@ -1,0 +1,20 @@
+uuid: 0021065f-fe86-49fb-bc8a-d288d2124f81
+langcode: fr
+status: true
+dependencies:
+  module:
+    - acreat_factory
+  theme:
+    - acreat
+id: client_copyright
+theme: acreat
+region: footer_2
+weight: -4
+provider: null
+plugin: client_copyright_block
+settings:
+  id: client_copyright_block
+  label: Copyright
+  provider: acreat_factory
+  label_display: '0'
+visibility: {  }

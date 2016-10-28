@@ -1,0 +1,38 @@
+uuid: 48e9df30-90da-496e-b34c-fe17d39464c1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - node.type.actualite
+  module:
+    - image
+id: node.actualite.field_image
+field_name: field_image
+entity_type: node
+bundle: actualite
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'actualite/image/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '5 Mb'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: 8edc1787-b4cc-4203-a224-c2c40f751b7b
+    alt: 'Aucune photo disponible'
+    title: ''
+    width: 880
+    height: 598
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

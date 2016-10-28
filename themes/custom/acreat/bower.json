@@ -1,0 +1,25 @@
+{
+  "name": "acreat",
+  "homepage": "https://github.com/Orga35/drupal",
+  "authors": [
+    "Franck LINTANFF <franck.lintanff@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "keywords": [
+    "acreat",
+    "theme"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui-multiselect-widget": "^1.4.1",
+    "jquery-ui": "^1.12.1"
+  }
+}

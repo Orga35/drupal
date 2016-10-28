@@ -1,0 +1,25 @@
+uuid: 8906e0e0-f271-4c0c-96f3-b29ddc048022
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acreat
+id: breadcrumbs
+theme: acreat
+region: content_top
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: 
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

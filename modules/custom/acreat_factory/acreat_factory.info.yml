@@ -1,0 +1,9 @@
+name: Acreat Factory
+core: 8.x
+description: Websites factory by Acreat.
+package: Acreat
+type: module
+
+libraries:
+  - 'acreat_factory/google-maps'
+  - 'acreat_factory/client-coordonnees-map'

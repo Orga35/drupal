@@ -1,0 +1,42 @@
+//
+// Acreat Actualités Pager Block styles
+// --------------------------------------------------
+
+.block-actualite-pager-block {
+  @include make-row;
+  margin-top: 2em;
+  
+  .previous {
+    @include make-xs-column(6);
+    @include make-sm-column(6);
+    @include make-md-column(6);
+    @include make-lg-column(6);
+    
+    a {
+      @extend .btn;
+      @extend .btn-primary;
+      float: left;
+    }
+  }
+  
+  .next {
+    @include make-xs-column(6);
+    @include make-sm-column(6);
+    @include make-md-column(6);
+    @include make-lg-column(6);
+    
+    a {
+      @extend .btn;
+      @extend .btn-primary;
+      float: right;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .block-actualite-pager-block {
+    .text {
+      display: none;
+    }
+  }
+}

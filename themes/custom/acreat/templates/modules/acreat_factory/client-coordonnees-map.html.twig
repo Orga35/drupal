@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default template of the client_coordonnees_map theme from the Acreat Factory module
+ *
+ * Available variables:
+ * - $client
+ */
+#}
+
+<div class="panel panel-default" itemscope itemtype="http://schema.org/Organization">
+  <h2><span itemprop="name">{{ client.denomination_sociale.default_value }}</span></h2>
+  <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">{{ client.adresse.default_value }}</span><br />
+    <span itemprop="postalCode">{{ client.code_postal.default_value }}</span> <span itemprop="addressLocality">{{ client.ville.default_value }}</span>
+  </p>
+  <p class="numbers">
+    {% if client.telephone.default_value is not empty %}
+      <i class="fa fa-phone"></i><span class="phone" itemprop="telephone"><strong>{{ client.telephone.default_value }}</strong></span>
+    {% endif %}
+  
+    {% if client.fax.default_value is not empty %}
+      <br /><i class="fa fa-fax"></i><span class="fax" itemprop="faxNumber"><strong>{{ client.fax.default_value }}</strong></span>
+    {% endif %}
+  </p>
+  <div itemscope itemtype="http://schema.org/GeoCoordinates">
+    <meta itemprop="latitude" content="{{ client.latitude.default_value }}" />
+    <meta itemprop="longitude" content="{{ client.longitude.default_value }}" />
+  </div>
+  <div class="map" data-latitude="{{ client.latitude.default_value }}" data-longitude="{{ client.longitude.default_value }}"></div>
+</div>

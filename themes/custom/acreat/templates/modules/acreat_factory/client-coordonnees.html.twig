@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default template of the client_information_coordonnees theme from the Acreat Factory module
+ *
+ * Available variables:
+ * - $client
+ */
+#}
+
+<div itemscope itemtype="http://schema.org/Organization">
+  <p><span itemprop="name"><strong>{{ client.denomination_sociale.default_value }}</strong></span></p>
+  <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">{{ client.adresse.default_value }}</span><br />
+    <span itemprop="postalCode">{{ client.code_postal.default_value }}</span> <span itemprop="addressLocality">{{ client.ville.default_value }}</span>
+  </p>
+  <p>
+    {% if client.telephone.default_value is not empty %}
+      <i class="fa fa-phone"></i><span class="phone" itemprop="telephone">{{ client.telephone.default_value }}</span>&nbsp;
+    {% endif %}
+  
+    {% if client.fax.default_value is not empty %}
+      <i class="fa fa-fax"></i><span class="fax" itemprop="faxNumber">{{ client.fax.default_value }}</span></p>
+    {% endif %}
+</div>

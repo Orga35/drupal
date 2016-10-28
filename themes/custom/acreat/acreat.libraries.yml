@@ -17,3 +17,24 @@ bootstrap-scripts:
     bootstrap/javascripts/bootstrap/scrollspy.js: {}
     bootstrap/javascripts/bootstrap/tab.js: {}
     bootstrap/javascripts/bootstrap/transition.js: {}
+    
+jquery-multiselect:
+  js:
+    js/jquery-multiselect/jquery.multiselect.js: {}
+    js/jquery-multiselect/jquery.multiselect.filter.js: {}
+    js/jquery-multiselect/acreat.multiselect.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui.widget
+    
+jquery-slick:
+  js:
+    js/jquery-slick/slick.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    
+global-scripts:
+  js:
+    js/global-scripts.js: {}

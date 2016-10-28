@@ -1,0 +1,34 @@
+//
+// Alerts
+// --------------------------------------------------
+@import "../../../bootstrap/stylesheets/bootstrap/alerts";
+
+
+.alert {
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .backtrace {
+    display: none;
+  }
+}
+
+.alert-dismissable,
+.alert-dismissible {
+  .close {
+    right: 0;
+  }
+}

@@ -18,7 +18,8 @@
         "drupal/token": "^1.0@alpha",
         "drupal/adminimal_theme": "^1.1",
         "drupal/bootstrap": "^3.0@RC",
-        "drupal/console": "^0.11.3"
+        "drupal/console": "^0.11.3",
+        "drupal/twig_extensions": "^1.0"
     },
     "replace": {
         "drupal/core": "~8.1"

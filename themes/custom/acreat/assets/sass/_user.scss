@@ -1,0 +1,136 @@
+//
+// User
+// --------------------------------------------------
+
+body.user-form {
+  padding-top: 0;
+  
+  .content-3 {
+    background: lighten($panel-default-border, 10%);
+    min-height: 100vh;
+  }
+}
+
+// User Forms
+#user-login-form,
+#user-register-form,
+#user-pass {
+  padding: 60px 0;
+  
+  .form-submit {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-lg;
+    margin: 2em auto 0;
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .panel {
+    margin-bottom: 10px;
+    padding: 30px 50px;
+    position: relative;
+    
+    img {
+      margin: 0 auto 50px;
+    }
+  }
+}
+
+// User Login Form
+#user-login-form {
+  p {
+    text-align: center;
+  }
+  
+  .form-submit {
+    width: 200px;
+  }
+  
+  .panel {
+    p {
+      text-align: right;
+    }
+  }
+}
+
+// User Pass Form
+#user-pass {
+  p {
+    text-align: right;
+  }
+  
+  .panel {
+    p {
+      text-align: left;
+    }
+  }
+}
+
+// User Register Form
+#user-register-form {
+  p {
+    text-align: right;
+  }
+  
+  .form-item-field-civilite,
+  .form-item-field-prenom-0-value,
+  .form-item-field-nom-0-value {
+    @include make-xs-column(12);
+    @include make-sm-column(4);
+    @include make-md-column(4);
+    @include make-lg-column(4);
+  }
+  
+  .form-item-field-adresse-0-value,
+  .form-item-name,
+  .form-item-mail {
+    @include make-xs-column(12);
+  }
+  
+  .form-item-field-code-postal-0-value,
+  .form-item-field-ville-0-value,
+  .form-item-field-telephone-0-value,
+  .form-item-field-mobile-0-value,
+  .form-item-pass-pass1,
+  .form-item-pass-pass2 {
+    @include make-xs-column(12);
+    @include make-sm-column(6);
+    @include make-md-column(6);
+    @include make-lg-column(6);
+  }
+  
+  div.password-confirm {
+    font-size: 0.8em;
+    
+    .error {
+      color: $alert-danger-text;
+    }
+    
+    .ok {
+      color: $alert-success-text;
+    }
+  }
+  
+  .form-submit {
+    width: 300px;
+  }
+}
+
+
+@media (max-width: $screen-sm-max) {
+  // User Forms
+  #user-login-form,
+  #user-register-form,
+  #user-pass-form {
+    padding: 30px 0;
+    
+    .panel {
+      margin-bottom: 10px;
+      padding: 15px 30px;
+    }
+  }
+}

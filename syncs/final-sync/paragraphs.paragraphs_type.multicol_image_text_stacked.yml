@@ -1,0 +1,6 @@
+uuid: 9b119bfe-2114-4f56-882d-55f2a7026d8f
+langcode: fr
+status: true
+dependencies: {  }
+id: multicol_image_text_stacked
+label: 'Multiple columns image/text stacked'

@@ -1,7 +1,296 @@
 <?php
 /**
  * @file
- * Bootstrap sub-theme.
- *
- * Place your custom PHP code in this file.
+ * Bootstrap sub-theme : Acreat.
  */
+
+use \Drupal\core\Url;
+use \Drupal\Core\Link;
+use \Drupal\acreat_helper\Controller\AcreatHelperController;
+
+
+
+/* HOOKS
+**************************************************************/
+
+/**
+ * Implements hook_theme().
+ */
+function acreat_theme($existing, $type, $theme, $path) {
+  $themes = array();
+  
+  // Login Form
+  $themes['user_login_form'] = array(
+    'render element' => 'form',
+    'template' => 'user-login-form'
+  );
+  
+  // Register Form
+  $themes['user_register_form'] = array(
+    'render element' => 'form',
+    'template' => 'user-register-form'
+  );
+  
+  // Password Reset Form
+  $themes['user_pass'] = array(
+    'render element' => 'form',
+    'template' => 'user-pass'
+  );
+
+  return $themes;
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function acreat_local_tasks_alter(&$data, $route_name){
+  if ($route_name == 'user.login'){
+    unset($data['tabs'][0]['user.pass']);
+    unset($data['tabs'][0]['user.register']);
+  }
+  
+  if ($route_name == 'user.pass'){
+    unset($data['tabs'][0]['user.pass']);
+    unset($data['tabs'][0]['user.register']);
+    unset($data['tabs'][0]['user.login']);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function acreat_theme_suggestions_page_alter(&$suggestions, $variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  
+  switch($current_path) {
+    case '/user/login':
+    case '/user/password':
+      $suggestions[] = 'page__user__form';
+    break;
+    case '/user/register':
+      // Chargement de la configuration du module User
+      $user_config = \Drupal::config('user.settings');
+      
+      if($user_config->get('register') != USER_REGISTER_ADMINISTRATORS_ONLY) {
+        $suggestions[] = 'page__user__form';
+      }
+    break;
+  }
+  
+  // Chargement de la configuration système
+  $system_config = \Drupal::config('system.site');
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node && ('/node/' . $node->id() == $system_config->get("page.404") || '/node/' . $node->id() == $system_config->get("page.403"))) {
+    $suggestions[] = 'page__user__form';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function acreat_theme_suggestions_block_alter(&$suggestions, $variables) {
+  if(isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__type__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+* Implements hook_form_user_login_form_alter().
+*/
+function acreat_form_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id) {
+  
+}
+
+/**
+* Implements hook_form_user_login_form_alter().
+*/
+function acreat_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state) {
+  $form['name']['#attributes']['placeholder'] = t("Username");
+  unset($form['name']['#title']);
+  
+  $form['pass']['#attributes']['placeholder'] = t("Password");
+  unset($form['pass']['#title']);
+}
+
+/**
+* Implements hook_form_user_login_form_alter().
+*/
+function acreat_form_user_pass_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state) {
+  $form['name']['#attributes']['placeholder'] = t("Username");
+}
+
+/**
+* Implements hook_form_user_register_form_alter().
+*/
+function acreat_form_user_register_form_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state) {
+  $form['account']['name']['#attributes']['placeholder'] = t("Username") . ' *';
+  $form['account']['mail']['#attributes']['placeholder'] = t("Email address") . ' *';
+  
+  $form['field_civilite']['widget']['#options']['_none'] = 'Civilité';
+}
+
+/**
+ * Implementation of hook_element_info_alter().
+ */
+function acreat_element_info_alter(&$type) {
+  if(isset($type['password_confirm'])) {
+    $type['password_confirm']['#process'][] = 'acreat_process_password_confirm';
+  }
+}
+ 
+
+
+
+/* PREPROCESSES
+**************************************************************/
+
+/**
+* Implements hook_preprocess_html().
+*/
+function acreat_preprocess_html(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  
+  $variables['custom_body_classes'] = '';
+  switch($current_path) {
+    case '/user/login':
+    case '/user/register':
+    case '/user/password':
+      $variables['custom_body_classes'] = 'user-form';
+    break;
+  }
+  
+  // Chargement de la configuration système
+  $system_config = \Drupal::config('system.site');
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node && ('/node/' . $node->id() == $system_config->get("page.404") || '/node/' . $node->id() == $system_config->get("page.403"))) {
+    $variables['custom_body_classes'] = 'no-content';
+  }
+}
+
+/**
+* Implements hook_preprocess_page().
+*/
+function acreat_preprocess_page(&$variables) {
+  
+}
+
+/**
+* Implements hook_preprocess_region().
+*/
+function acreat_preprocess_region(&$variables) {
+  switch($variables['region']) {
+    case 'banner':
+      $variables['banner_bg_url'] = Url::fromUri(file_create_url('public://banner.jpg'));
+    break;
+  }
+}
+
+/**
+* Implements hook_preprocess_user_login_form().
+*/
+function acreat_preprocess_user_login_form(&$variables) {
+  // Chargement des informations du client
+  $acreat_factory_config = \Drupal::config('acreat_factory.client');
+  // Chargement de la configuration du module User
+  $user_config = \Drupal::config('user.settings');
+    
+  // Logo
+  $logo = array(
+    '#theme'  => 'image',
+    '#uri'    => theme_get_setting('logo.url'),
+    '#alt'    => 'Logo ' . $acreat_factory_config->get("client.denomination_sociale.default_value"),
+    '#title'  => $acreat_factory_config->get("client.denomination_sociale.default_value")
+  );
+  $variables['logo'] = render($logo);
+  
+  // Lien vers le formulaire de réinitialisation de mot de passe
+  $variables['user_pass_link'] = \Drupal::l('Mot de passe oublié ?', new Url('user.pass', array(), array('attributes' => array('title' => 'Réinitialisez votre mot de passe maintenant'))));
+  
+  // Lien vers le formulaire d'inscription
+  if($user_config->get('register') != USER_REGISTER_ADMINISTRATORS_ONLY) {
+    $variables['user_register_link'] = \Drupal::l('Pas encore inscrit(e) ?', new Url('user.register', array(), array('attributes' => array('title' => 'Inscription'))));
+  }
+}
+
+/**
+* Implements hook_preprocess_user_pass().
+*/
+function acreat_preprocess_user_pass(&$variables) {
+  // Chargement des informations du client
+  $acreat_factory_config = \Drupal::config('acreat_factory.client');
+    
+  // Logo
+  $logo = array(
+    '#theme'  => 'image',
+    '#uri'    => theme_get_setting('logo.url'),
+    '#alt'    => 'Logo ' . $acreat_factory_config->get("client.denomination_sociale.default_value"),
+    '#title'  => $acreat_factory_config->get("client.denomination_sociale.default_value")
+  );
+  $variables['logo'] = render($logo);
+  
+  // Lien vers le formulaire de connexion
+  $variables['user_login_link'] = \Drupal::l('Retour au formulaire de connexion', new Url('user.login', array(), array('attributes' => array('title' => 'Connectez-vous à votre espace personnel'))));
+}
+
+/**
+* Implements hook_preprocess_region().
+*/
+function acreat_preprocess_user_register_form(&$variables) {
+  // Chargement des informations du client
+  $acreat_factory_config = \Drupal::config('acreat_factory.client');
+    
+  // Logo
+  $logo = array(
+    '#theme'  => 'image',
+    '#uri'    => theme_get_setting('logo.url'),
+    '#alt'    => 'Logo ' . $acreat_factory_config->get("client.denomination_sociale.default_value"),
+    '#title'  => $acreat_factory_config->get("client.denomination_sociale.default_value")
+  );
+  $variables['logo'] = render($logo);
+  
+  // Lien vers le formulaire de connexion
+  $variables['user_login_link'] = \Drupal::l('Connectez-vous !', new Url('user.login', array(), array('attributes' => array('title' => 'Connectez-vous à votre espace personnel'))));
+}
+
+/**
+* Implements hook_preprocess_node().
+*/
+function acreat_preprocess_node(&$variables) {
+  switch($variables['node']->getType()) {
+    case 'actualite':
+      switch($variables['view_mode']) {
+        case 'teaser':
+          $body = trim(strip_tags(render($variables['content']['body'])->__toString()));
+          if(strlen($body) > 150)
+            $body = substr($body, 0, 150) . '...';
+            
+          $variables['content']['teaser'] = $body;
+        break;
+      }
+    break;
+  }
+}
+
+/**
+* Implements hook_preprocess_views_view__actualites__promoted().
+*/
+function acreat_preprocess_views_view__actualites__promoted(&$variables) {
+  // Lien vers la page Actualités
+  $variables['actualites_link'] = Url::FromUri('internal:/actualites')->toString();
+}
+
+
+/* DIVERS
+**************************************************************/
+
+/**
+ * Function module_name_process_password_confirm() for editing label.
+ */
+function acreat_process_password_confirm($element) {
+  if($element['#array_parents'][0] == 'account') {
+    $element['pass1']['#attributes']['placeholder'] = t('Password') . ' *';
+    $element['pass2']['#attributes']['placeholder'] = t('Confirm password') . ' *';
+  }
+  
+  return $element;
+}

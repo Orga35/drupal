@@ -1,0 +1,55 @@
+uuid: f0fa3ab3-537e-4675-b554-7be8651f8e8f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.page
+    - paragraphs.paragraphs_type.multicol_image_text_stacked
+    - paragraphs.paragraphs_type.one_column_text
+    - paragraphs.paragraphs_type.three_columns_text
+    - paragraphs.paragraphs_type.two_columns_image_text
+    - paragraphs.paragraphs_type.two_columns_text
+    - paragraphs.paragraphs_type.two_columns_text_image
+  module:
+    - entity_reference_revisions
+id: node.page.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: page
+label: Paragraphes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      one_column_text: one_column_text
+      two_columns_text: two_columns_text
+      three_columns_text: three_columns_text
+      two_columns_text_image: two_columns_text_image
+      two_columns_image_text: two_columns_image_text
+      multicol_image_text_stacked: multicol_image_text_stacked
+    target_bundles_drag_drop:
+      one_column_text:
+        enabled: true
+        weight: -11
+      two_columns_text:
+        enabled: true
+        weight: -10
+      three_columns_text:
+        enabled: true
+        weight: -9
+      two_columns_text_image:
+        enabled: true
+        weight: -8
+      two_columns_image_text:
+        enabled: true
+        weight: -7
+      multicol_image_text_stacked:
+        enabled: true
+        weight: 7
+field_type: entity_reference_revisions
